@@ -4,36 +4,36 @@ import { useState } from "react";
 
 const faqs = [
   {
-    q: "How does the at-home screening kit work?",
-    a: "We ship a program-specific screening kit directly to each enrolled employee. They schedule a short telehealth session with a certified proctor who guides them through the at-home blood collection in real-time. Results are clinically reviewed, and eligible employees receive their prescription — all without leaving home.",
+    q: "What programs do you offer?",
+    a: "We offer five program categories: (1) Individualized Weight Loss with compounded GLP-1/GIP, (2) Brand-Name Weight Loss with Wegovy/Ozempic/Zepbound/Mounjaro only, (3) Testosterone Replacement Therapy (TRT), (4) Female Hormone Replacement Therapy (HRT) for menopause/perimenopause, (5) Men's and Women's Sexual Health (ED, PE, libido), and (6) Anti-Aging & Longevity. All are clinically supervised and delivered via telemedicine.",
   },
   {
-    q: "What medications and therapies do you prescribe?",
-    a: "GLP-1 Program: FDA-approved GLP-1/GIP medications including Semaglutide and Tirzepatide. TRT Program: Testosterone cypionate injections, topical gels, and other testosterone formulations. HRT Program: Bioidentical estrogen, progesterone, and combination therapies. All prescriptions are clinician-determined based on lab results and medical history.",
+    q: "How does the at-home screening work?",
+    a: "For programs requiring labs (TRT, Female HRT), we ship screening kits directly to enrolled employees. They complete at-home blood collection guided by a live certified proctor via telehealth. Results are clinically reviewed, and eligible employees receive their prescription. Weight loss, sexual health, and longevity programs typically don't require labs.",
   },
   {
-    q: "How do the at-home hormone panels work?",
-    a: "Employees receive a program-specific test kit shipped to their home. For TRT, this includes total/free testosterone, SHBG, estradiol, PSA, and metabolic markers. For HRT, it covers estrogen, progesterone, FSH, LH, thyroid panel, and related hormones. A live proctor guides the collection, and results are reviewed by specialist clinicians within 48 hours.",
+    q: "What's the difference between Individualized and Brand-Name Weight Loss?",
+    a: "Individualized WL uses compounded semaglutide/tirzepatide with three titration tracks (Alternative, Rapid, Twice-Weekly) and symptom-targeted additives for personalization. Brand-Name WL uses only FDA-approved brand medications (Wegovy, Ozempic, Zepbound, Mounjaro) with strict eligibility — no compounded products. Both include safety screening and ongoing follow-ups.",
+  },
+  {
+    q: "What medications are prescribed for TRT and Female HRT?",
+    a: "TRT: Testosterone Lotion (2-20mg/ml), Testosterone Lotion 5-10%, and Testosterone Cypionate injections — all requiring mandatory low-T lab confirmation. Female HRT: Estrogen therapy (Estrogel, Divigel, Vivelle-Dot patches, oral Estrace, Evamist spray), Progesterone (Prometrium, Provera, Norethindrone), and Vaginal Estrogen for genitourinary symptoms. Female HRT does not include controlled substances like testosterone.",
+  },
+  {
+    q: "What sexual health treatments are available?",
+    a: "Men's ED: Sildenafil, Tadalafil, Vardenafil, Avanafil, and compounded combinations. Premature Ejaculation: SSRI class (Paroxetine, Sertraline, Fluoxetine, Citalopram) and PDE5i class, plus desensitizing products. Women's Sexual Health: PT-141 (Bremelanotide) and Oxytocin for desire and intimacy support. No labs required for any sexual health program.",
   },
   {
     q: "How does pricing work for employers?",
-    a: "We offer flexible cost models: fully employer-subsidized, partially subsidized (cost-sharing), or employee-paid. We can also integrate with your existing PBM (like CVS Caremark) for seamless benefit administration. Contact our team for custom pricing based on your workforce size and coverage model.",
+    a: "We offer flexible cost models: fully employer-subsidized, partially subsidized (cost-sharing), or employee-paid. We can also integrate with your existing PBM (like CVS Caremark). Contact our team for custom pricing based on your workforce size, selected programs, and coverage model.",
   },
   {
     q: "What kind of reporting do employers receive?",
-    a: "Our Population Health Dashboard provides aggregated, de-identified analytics including enrollment rates, program retention, average weight outcomes, medication adherence metrics, and engagement scores. Enterprise plans include custom ROI reporting and executive health briefings.",
-  },
-  {
-    q: "Is the program available in all 50 states?",
-    a: "Yes. JoeyMed for Business operates with licensed providers across all 50 states. At-home screening kits ship nationwide, and our telehealth platform is accessible from anywhere in the US.",
+    a: "Our Population Health Dashboard provides aggregated, de-identified analytics including enrollment rates by program, retention, outcomes, medication adherence, and engagement scores. Enterprise plans include custom ROI reporting and executive health briefings.",
   },
   {
     q: "How is patient privacy handled?",
-    a: "All services are fully HIPAA-compliant. Employers receive only aggregated, de-identified data — never individual employee health information. Our platform uses enterprise-grade encryption and follows strict healthcare data governance protocols.",
-  },
-  {
-    q: "What ongoing support do employees receive?",
-    a: "Employees get 24/7 clinical support, weekly check-in prompts, medication reminders, clinician-guided titration management, side-effect support, and personalized health insights — all through the JoeyMed mobile app.",
+    a: "All services are fully HIPAA-compliant. Employers receive only aggregated, de-identified data — never individual employee health information. Our platform uses enterprise-grade encryption and follows strict healthcare data governance protocols. Sexual health programs feature additional privacy safeguards.",
   },
 ];
 
@@ -62,7 +62,7 @@ export function FAQ() {
               >
                 {faq.q}
                 <span
-                  className={`faq-icon text-2xl font-light text-text-muted ml-4 shrink-0 transition-transform duration-300 ${
+                  className={`text-2xl font-light text-text-muted ml-4 shrink-0 transition-transform duration-300 ${
                     openIndex === i ? "rotate-45" : ""
                   }`}
                 >

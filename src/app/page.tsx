@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Programs } from "@/components/Programs";
+import { ClinicalDetails } from "@/components/ClinicalDetails";
 import { SocialProof } from "@/components/SocialProof";
 import { HowItWorks } from "@/components/HowItWorks";
 import { ForEmployers } from "@/components/ForEmployers";
@@ -16,7 +17,7 @@ export default function Home() {
     <>
       <div className="bg-gradient-to-r from-blue-dark to-blue text-white text-center py-2.5 px-4 text-sm font-medium">
         <p>
-          Now offering employer-sponsored GLP-1, TRT & HRT programs —{" "}
+          Now offering employer-sponsored weight loss, hormone, sexual health & longevity programs —{" "}
           <a href="#contact" className="text-cyan underline font-semibold">
             Talk to our team
           </a>
@@ -25,6 +26,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Programs />
+      <ClinicalDetails />
       <SocialProof />
       <HowItWorks />
       <ForEmployers />

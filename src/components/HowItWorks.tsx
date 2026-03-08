@@ -7,12 +7,12 @@ const steps = [
   {
     num: "02",
     title: "At-Home Screening Kit",
-    desc: "Program-specific screening kits ship directly to employees — GLP-1 metabolic panels, testosterone & hormone panels, or comprehensive HRT panels. Guided by a live certified proctor via telehealth.",
+    desc: "For programs requiring labs, screening kits ship directly to employees. Weight loss and sexual health programs use streamlined digital intake. All guided by clinical protocols.",
   },
   {
     num: "03",
     title: "Clinical Review & Prescription",
-    desc: "Specialist clinicians review results and determine eligibility — GLP-1 medications, TRT protocols, or HRT prescriptions. Everything delivered to the employee's door.",
+    desc: "Specialist clinicians review results and determine eligibility. Prescriptions are tailored to each program and delivered to the employee's door — no pharmacy visits needed.",
   },
   {
     num: "04",
@@ -34,9 +34,9 @@ export function HowItWorks() {
             <span className="gradient-text">in four simple steps</span>
           </h2>
           <p className="text-lg text-text-secondary">
-            Whether it&apos;s GLP-1 weight management, TRT, or HRT — our
-            Test-to-Treat platform guides employees from at-home screening
-            through ongoing care.
+            Whether it&apos;s weight loss, hormone therapy, sexual health, or
+            longevity — our platform guides employees from intake through
+            ongoing care.
           </p>
         </div>
 

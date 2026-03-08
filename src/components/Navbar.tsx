@@ -4,10 +4,10 @@ import { useState } from "react";
 
 const navLinks = [
   { href: "#programs", label: "Programs" },
+  { href: "#clinical", label: "Clinical Protocols" },
   { href: "#how-it-works", label: "How It Works" },
   { href: "#employers", label: "For Employers" },
   { href: "#app", label: "The App" },
-  { href: "#results", label: "Results" },
   { href: "#plans", label: "Plans" },
   { href: "#faq", label: "FAQ" },
 ];

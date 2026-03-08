@@ -12,11 +12,11 @@ const footerCols = [
   {
     title: "Solutions",
     links: [
-      { label: "GLP-1 Programs", href: "#" },
-      { label: "TRT Programs", href: "#" },
-      { label: "HRT Programs", href: "#" },
-      { label: "At-Home Testing", href: "#" },
-      { label: "Population Health", href: "#" },
+      { label: "Weight Loss Programs", href: "#programs" },
+      { label: "TRT & Female HRT", href: "#programs" },
+      { label: "Sexual Health", href: "#programs" },
+      { label: "Anti-Aging & Longevity", href: "#programs" },
+      { label: "Clinical Protocols", href: "#clinical" },
     ],
   },
   {

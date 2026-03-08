@@ -12,8 +12,8 @@ export function Hero() {
             <span className="gradient-text">employee health</span> starts here
           </h1>
           <p className="text-lg text-text-secondary leading-relaxed mb-8 max-w-[540px]">
-            GLP-1 weight management, TRT, and HRT programs — clinically
-            supervised and delivered to your workforce. At-home testing,
+            Weight loss, hormone therapy, sexual health, and longevity programs —
+            clinically supervised and delivered to your workforce. At-home testing,
             telehealth support, and measurable outcomes through one platform.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-10">
