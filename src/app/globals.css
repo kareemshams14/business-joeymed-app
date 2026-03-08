@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --color-blue: #155EEF;
+  --color-blue-dark: #0B3D91;
+  --color-blue-light: #EBF2FF;
+  --color-blue-glow: #2b7fff;
+  --color-cyan: #03D7FD;
+  --color-orange: #F97316;
+  --color-orange-light: #FFF3EB;
+  --color-purple: #8B5CF6;
+  --color-purple-light: #F3EBFF;
+  --color-bg: #FCFDFC;
+  --color-bg-alt: #F7F9FC;
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94A3B8;
+  --color-border: #E2E8F0;
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  background: var(--color-bg);
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Button system - matching JoeyMed's 3D shadow press style */
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-blue-glow) 100%);
+  color: white;
+  box-shadow: 0 5px 0 0 #0552d1, 0 12px 4px 0 rgba(27, 112, 248, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 0 0 #0552d1, 0 16px 8px 0 rgba(27, 112, 248, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 0 #0552d1, 0 4px 2px 0 rgba(27, 112, 248, 0.2);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--color-text-primary);
+  box-shadow: 0 5px 0 0 #cbd5e1, 0 12px 4px 0 rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 0 0 #cbd5e1, 0 16px 8px 0 rgba(0, 0, 0, 0.08);
+}
+
+.btn-secondary:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 0 #cbd5e1, 0 4px 2px 0 rgba(0, 0, 0, 0.04);
+}
+
+/* Float animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out infinite 3s;
+}
+
+/* FAQ details */
+details summary {
+  list-style: none;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] summary .faq-icon {
+  transform: rotate(45deg);
+}
