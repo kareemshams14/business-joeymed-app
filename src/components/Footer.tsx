@@ -41,31 +41,37 @@ const footerCols = [
 
 export function Footer() {
   return (
-    <footer className="bg-text-primary text-white/70 pt-20 pb-10">
+    <footer className="bg-navy text-white/50 pt-20 pb-10">
       <div className="max-w-[1200px] mx-auto px-6">
-        <div className="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-10 mb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-10 mb-14">
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
-            <a href="#" className="flex items-baseline gap-0.5 text-2xl font-extrabold mb-4">
-              <span className="text-cyan">Joey</span>
-              <span className="text-white">Med</span>
-              <span className="text-[11px] font-semibold text-white/40 ml-2 uppercase tracking-widest">
+            <a href="#" className="flex items-center gap-2 mb-4">
+              <div className="w-7 h-7 rounded-md bg-gradient-to-br from-blue to-blue-dark flex items-center justify-center">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M3 7h8M7 3v8" stroke="white" strokeWidth="2" strokeLinecap="round" />
+                </svg>
+              </div>
+              <span className="text-lg font-bold text-white tracking-tight">
+                Joey<span className="text-blue-glow">Med</span>
+              </span>
+              <span className="text-[9px] font-semibold text-white/25 uppercase tracking-[0.15em] ml-1 border-l border-white/10 pl-2">
                 for Business
               </span>
             </a>
-            <p className="text-sm leading-relaxed max-w-[280px]">
+            <p className="text-[13px] leading-relaxed max-w-[260px] mb-5">
               Employer-sponsored health management, powered by clinically
               supervised telehealth and at-home testing.
             </p>
-            <div className="flex gap-3 mt-5">
-              {["Instagram", "LinkedIn", "Twitter"].map((s) => (
+            <div className="flex gap-2">
+              {["In", "Li", "X"].map((s) => (
                 <a
                   key={s}
                   href="#"
                   aria-label={s}
-                  className="w-10 h-10 rounded-lg bg-white/8 hover:bg-white/15 flex items-center justify-center text-white/60 hover:text-white transition-all text-sm font-semibold"
+                  className="w-9 h-9 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.06] flex items-center justify-center text-white/40 hover:text-white/70 transition-all text-[12px] font-semibold"
                 >
-                  {s[0]}
+                  {s}
                 </a>
               ))}
             </div>
@@ -74,14 +80,14 @@ export function Footer() {
           {/* Link Columns */}
           {footerCols.map((col) => (
             <div key={col.title}>
-              <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4">
+              <h4 className="text-[11px] font-bold text-white/70 uppercase tracking-[0.15em] mb-4">
                 {col.title}
               </h4>
               {col.links.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="block text-sm py-1.5 hover:text-white transition-colors"
+                  className="block text-[13px] py-1.5 hover:text-white/80 transition-colors"
                 >
                   {link.label}
                 </a>
@@ -91,8 +97,8 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="flex flex-col sm:flex-row justify-between items-center pt-8 border-t border-white/10 gap-4">
-          <p className="text-[13px]">
+        <div className="flex flex-col sm:flex-row justify-between items-center pt-8 border-t border-white/[0.06] gap-4">
+          <p className="text-[12px] text-white/30">
             &copy; 2026 JoeyMed, Inc. All rights reserved. Licensed U.S.
             providers. HIPAA-compliant.
           </p>
@@ -100,7 +106,7 @@ export function Footer() {
             {["HIPAA", "SOC 2", "50 States"].map((b) => (
               <span
                 key={b}
-                className="px-3 py-1 rounded-md text-[11px] font-bold bg-white/8 text-white/50 uppercase tracking-wide"
+                className="px-2.5 py-1 rounded-md text-[10px] font-bold bg-white/[0.04] text-white/25 uppercase tracking-wide border border-white/[0.04]"
               >
                 {b}
               </span>

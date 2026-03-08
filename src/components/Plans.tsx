@@ -51,49 +51,49 @@ const plans = [
 
 export function Plans() {
   return (
-    <section id="plans" className="py-24 bg-bg-alt">
+    <section id="plans" className="py-24 bg-bg">
       <div className="max-w-[1200px] mx-auto px-6">
-        <div className="text-center max-w-[680px] mx-auto mb-14">
-          <span className="inline-block px-4 py-1.5 bg-blue-light text-blue rounded-full text-[13px] font-bold uppercase tracking-wide mb-4">
+        <div className="text-center max-w-[640px] mx-auto mb-14">
+          <span className="inline-block px-3 py-1 bg-blue/6 text-blue rounded-md text-[11px] font-semibold uppercase tracking-[0.15em] mb-4">
             Plans
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-tight tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold leading-tight tracking-tight mb-4">
             Flexible programs for{" "}
             <span className="gradient-text">every organization</span>
           </h2>
-          <p className="text-lg text-text-secondary">
+          <p className="text-[17px] text-text-secondary leading-relaxed">
             Whether you&apos;re a startup or a Fortune 500, we have a plan that
             fits your workforce needs and budget.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-6 items-start max-w-[1000px] mx-auto">
+        <div className="grid lg:grid-cols-3 gap-5 items-start max-w-[1000px] mx-auto">
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`bg-white rounded-[32px] p-8 sm:p-10 border transition-all hover:-translate-y-1 hover:shadow-lg relative ${
+              className={`bg-white rounded-3xl p-8 sm:p-9 border transition-all hover:-translate-y-1 relative ${
                 plan.featured
-                  ? "border-blue shadow-lg ring-1 ring-blue"
-                  : "border-border"
+                  ? "border-blue/30 shadow-lg shadow-blue/5 ring-1 ring-blue/10"
+                  : "border-border hover:shadow-md"
               }`}
             >
               {plan.featured && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-5 py-1.5 bg-gradient-to-r from-blue to-blue-glow text-white text-[13px] font-bold rounded-full whitespace-nowrap">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-blue to-blue-dark text-white text-[11px] font-bold rounded-full tracking-wide uppercase">
                   Most Popular
                 </div>
               )}
 
               <div className="mb-6">
-                <h3 className="text-2xl font-extrabold mb-1">{plan.name}</h3>
-                <p className="text-sm text-text-secondary">{plan.desc}</p>
+                <h3 className="text-xl font-bold mb-1">{plan.name}</h3>
+                <p className="text-[13px] text-text-secondary">{plan.desc}</p>
               </div>
 
-              <div className="py-5 border-y border-border mb-6">
-                <span className="block text-[13px] text-text-muted mb-1">
+              <div className="py-5 border-y border-border/60 mb-6">
+                <span className="block text-[11px] text-text-muted mb-1 uppercase tracking-wider">
                   Starting at
                 </span>
-                <span className="text-4xl font-extrabold">Custom</span>
-                <span className="block text-[13px] text-text-muted mt-0.5">
+                <span className="text-3xl font-bold">Custom</span>
+                <span className="block text-[11px] text-text-muted mt-0.5">
                   per employee / month
                 </span>
               </div>
@@ -102,11 +102,11 @@ export function Plans() {
                 {plan.features.map((f) => (
                   <li
                     key={f}
-                    className="py-2.5 pl-7 relative text-sm text-text-secondary"
+                    className="py-2 pl-6 relative text-[13px] text-text-secondary"
                   >
-                    <span className="absolute left-0 text-blue font-bold">
-                      ✓
-                    </span>
+                    <svg className="absolute left-0 top-2.5 text-blue" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M3 7l3 3 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
                     {f}
                   </li>
                 ))}
@@ -114,7 +114,7 @@ export function Plans() {
 
               <a
                 href="#contact"
-                className={`${plan.ctaClass} block text-center w-full px-7 py-4 rounded-xl font-semibold text-base transition-all`}
+                className={`${plan.ctaClass} block text-center w-full px-7 py-3.5 rounded-xl font-semibold text-[14px]`}
               >
                 {plan.cta}
               </a>

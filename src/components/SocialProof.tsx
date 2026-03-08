@@ -2,16 +2,16 @@ const partners = ["CVS Caremark", "Quest Diagnostics", "Aon", "Thrive Global", "
 
 export function SocialProof() {
   return (
-    <section className="py-12 border-y border-border">
+    <section className="py-10 bg-bg border-b border-border/60">
       <div className="max-w-[1200px] mx-auto px-6">
-        <p className="text-center text-[13px] font-semibold text-text-muted uppercase tracking-[1.5px] mb-6">
-          Partnering with industry leaders in healthcare and insurance
+        <p className="text-center text-[11px] font-semibold text-text-muted uppercase tracking-[0.2em] mb-8">
+          Trusted by leading organizations in healthcare and insurance
         </p>
-        <div className="flex items-center justify-center gap-12 flex-wrap">
+        <div className="flex items-center justify-center gap-10 sm:gap-16 flex-wrap">
           {partners.map((p) => (
             <span
               key={p}
-              className="text-lg font-bold text-text-muted opacity-50 hover:opacity-80 transition-opacity"
+              className="text-[15px] font-semibold text-text-muted/40 hover:text-text-muted/70 transition-all tracking-wide"
             >
               {p}
             </span>

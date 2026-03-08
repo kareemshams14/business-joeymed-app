@@ -41,32 +41,34 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-24 bg-bg">
+    <section id="faq" className="py-24 bg-bg-alt">
       <div className="max-w-[1200px] mx-auto px-6">
-        <div className="text-center max-w-[680px] mx-auto mb-12">
-          <span className="inline-block px-4 py-1.5 bg-blue-light text-blue rounded-full text-[13px] font-bold uppercase tracking-wide mb-4">
+        <div className="text-center max-w-[640px] mx-auto mb-12">
+          <span className="inline-block px-3 py-1 bg-blue/6 text-blue rounded-md text-[11px] font-semibold uppercase tracking-[0.15em] mb-4">
             FAQ
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold leading-tight tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold leading-tight tracking-tight mb-4">
             Common questions about{" "}
             <span className="gradient-text">our business programs</span>
           </h2>
         </div>
 
-        <div className="max-w-[760px] mx-auto">
+        <div className="max-w-[720px] mx-auto">
           {faqs.map((faq, i) => (
-            <div key={i} className="border-b border-border">
+            <div key={i} className="border-b border-border/60">
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full flex justify-between items-center py-5 text-left text-[17px] font-semibold text-text-primary hover:text-blue transition-colors"
+                className="w-full flex justify-between items-center py-5 text-left text-[15px] font-semibold text-text-primary hover:text-blue transition-colors"
               >
                 {faq.q}
                 <span
-                  className={`text-2xl font-light text-text-muted ml-4 shrink-0 transition-transform duration-300 ${
+                  className={`ml-4 shrink-0 transition-transform duration-300 ${
                     openIndex === i ? "rotate-45" : ""
                   }`}
                 >
-                  +
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M9 4v10M4 9h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                  </svg>
                 </span>
               </button>
               <div
@@ -74,7 +76,7 @@ export function FAQ() {
                   openIndex === i ? "max-h-[500px] pb-5" : "max-h-0"
                 }`}
               >
-                <p className="text-[15px] text-text-secondary leading-relaxed">
+                <p className="text-[14px] text-text-secondary leading-relaxed">
                   {faq.a}
                 </p>
               </div>

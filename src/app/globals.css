@@ -1,27 +1,37 @@
 @import "tailwindcss";
 
 @theme {
-  --color-blue: #155EEF;
-  --color-blue-dark: #0B3D91;
-  --color-blue-light: #EBF2FF;
-  --color-blue-glow: #2b7fff;
-  --color-cyan: #03D7FD;
+  --color-navy: #0A0E27;
+  --color-navy-light: #121837;
+  --color-navy-mid: #1A2042;
+  --color-blue: #3B82F6;
+  --color-blue-dark: #1E40AF;
+  --color-blue-light: #EFF6FF;
+  --color-blue-glow: #60A5FA;
+  --color-cyan: #06B6D4;
+  --color-teal: #14B8A6;
   --color-orange: #F97316;
-  --color-orange-light: #FFF3EB;
+  --color-orange-light: #FFF7ED;
   --color-purple: #8B5CF6;
-  --color-purple-light: #F3EBFF;
-  --color-bg: #FCFDFC;
-  --color-bg-alt: #F7F9FC;
+  --color-purple-light: #F5F3FF;
+  --color-rose: #E11D48;
+  --color-rose-light: #FFF1F2;
+  --color-amber: #D97706;
+  --color-amber-light: #FFFBEB;
+  --color-bg: #FAFBFC;
+  --color-bg-alt: #F1F5F9;
   --color-text-primary: #0F172A;
   --color-text-secondary: #475569;
   --color-text-muted: #94A3B8;
   --color-border: #E2E8F0;
-  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --color-border-light: #F1F5F9;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -38,38 +48,61 @@ body {
   background-clip: text;
 }
 
-/* Button system - matching JoeyMed's 3D shadow press style */
+.gradient-text-light {
+  background: linear-gradient(135deg, #93C5FD 0%, #67E8F9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Button system - sleek & premium */
 .btn-primary {
-  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-blue-glow) 100%);
+  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-blue-dark) 100%);
   color: white;
-  box-shadow: 0 5px 0 0 #0552d1, 0 12px 4px 0 rgba(27, 112, 248, 0.25);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 4px 16px rgba(59,130,246,0.25);
+  transition: all 0.2s ease;
 }
 
 .btn-primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 0 0 #0552d1, 0 16px 8px 0 rgba(27, 112, 248, 0.3);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05), 0 8px 24px rgba(59,130,246,0.35);
 }
 
 .btn-primary:active {
-  transform: translateY(2px);
-  box-shadow: 0 2px 0 0 #0552d1, 0 4px 2px 0 rgba(27, 112, 248, 0.2);
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 2px 8px rgba(59,130,246,0.2);
 }
 
 .btn-secondary {
   background: white;
   color: var(--color-text-primary);
-  box-shadow: 0 5px 0 0 #cbd5e1, 0 12px 4px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 1px 4px rgba(0,0,0,0.04);
   border: 1px solid var(--color-border);
+  transition: all 0.2s ease;
 }
 
 .btn-secondary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 0 0 #cbd5e1, 0 16px 8px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.06);
+  border-color: #CBD5E1;
 }
 
 .btn-secondary:active {
-  transform: translateY(2px);
-  box-shadow: 0 2px 0 0 #cbd5e1, 0 4px 2px 0 rgba(0, 0, 0, 0.04);
+  transform: translateY(0);
+}
+
+.btn-outline-light {
+  background: rgba(255,255,255,0.08);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+}
+
+.btn-outline-light:hover {
+  background: rgba(255,255,255,0.14);
+  border-color: rgba(255,255,255,0.3);
+  transform: translateY(-1px);
 }
 
 /* Float animation */
@@ -86,6 +119,49 @@ body {
   animation: float 6s ease-in-out infinite 3s;
 }
 
+/* Subtle pulse glow */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+.animate-glow {
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
+/* Premium card */
+.card-premium {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  transition: all 0.3s ease;
+}
+
+.card-premium:hover {
+  border-color: #CBD5E1;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.04), 0 10px 30px -5px rgba(0,0,0,0.06);
+  transform: translateY(-2px);
+}
+
+/* Glass card for dark sections */
+.card-glass {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px;
+  backdrop-filter: blur(16px);
+}
+
+/* Dot pattern background */
+.bg-dots {
+  background-image: radial-gradient(circle, #E2E8F0 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-dots-dark {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
 /* FAQ details */
 details summary {
   list-style: none;
@@ -97,4 +173,9 @@ details summary::-webkit-details-marker {
 
 details[open] summary .faq-icon {
   transform: rotate(45deg);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(59,130,246,0.15);
 }
