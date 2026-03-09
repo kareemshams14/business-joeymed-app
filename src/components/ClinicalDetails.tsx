@@ -78,10 +78,10 @@ const programs: Record<Tab, {
       "Structured follow-ups and dose optimization",
     ],
     employerValue: [
-      "Obesity is the #1 driver of employer healthcare costs",
-      "Employees who lose weight have 25% fewer sick days",
-      "Reduces downstream chronic disease claims",
-      "High engagement — weight loss is the most requested benefit",
+      "GLP-1 patients saw 40%+ fewer major cardiac events and 7% lower medical costs within 2 years (Aon, 2025)",
+      "Losing just 5% body weight saves ~$670/year per employee; 25% loss saves $2,849/year (JAMA)",
+      "43% of large employers now cover GLP-1s for weight loss — up from 28% in 2024 (KFF/Peterson)",
+      "Validated ROI of up to 3:1 from medication optimization and sustained BMI reductions (Calibrate)",
     ],
   },
   "behavioral-health": {
@@ -101,10 +101,10 @@ const programs: Record<Tab, {
       "Structured follow-ups and progress tracking",
     ],
     employerValue: [
-      "Mental health issues cost employers $200B+ annually in lost productivity",
-      "Employees with untreated depression miss 4x more workdays",
-      "Behavioral health is the #1 most-requested benefit by employees",
-      "Reduces disability claims and improves retention",
+      "Workers with poor mental health miss ~12 days/year vs. 2.5 days — costing $47.6B/year (Gallup)",
+      "Every $1 spent on mental health returns $5.39 in reduced absenteeism and turnover (CuraLinc, peer-reviewed)",
+      "Depressed employees are 35% less productive and miss 31.4 workdays per year (APA)",
+      "80%+ of virtual therapy patients report outcomes as good as or better than in-person (JMIR, 2024)",
     ],
   },
   "hormone-therapy": {
@@ -124,10 +124,10 @@ const programs: Record<Tab, {
       "Symptom tracking and dose optimization",
     ],
     employerValue: [
-      "Low testosterone and menopause symptoms drive fatigue, brain fog, and absenteeism",
-      "Menopause benefits are the fastest-growing category in HR",
-      "Hormone optimization improves energy, focus, and workplace performance",
-      "Positions your company as a modern, inclusive employer",
+      "Global menopause productivity losses estimated at $150B; healthcare costs exceed $600B (AARP)",
+      "1 in 10 women leave the workforce due to menopause; 25% consider leaving (Mayo Clinic, 2023)",
+      "6.5 million U.S. men projected to have symptomatic testosterone deficiency by 2025 (JCEM)",
+      "HRT is the most effective treatment for menopause symptoms with bone density benefits (2025 Meta-Analysis)",
     ],
   },
   longevity: {
@@ -147,10 +147,10 @@ const programs: Record<Tab, {
       "Wellness add-ons (red light, collagen, cold therapy)",
     ],
     employerValue: [
-      "Positions your company alongside top tech firms offering premium perks",
-      "Proactive wellness reduces long-term healthcare spend",
-      "High perceived value — employees see this as a premium benefit",
-      "Strong retention tool for competitive talent markets",
+      "95% of companies tracking wellness ROI report positive returns (Wellhub, 2,000 HR leaders, 2024)",
+      "J&J's wellness program delivered $2.71 per $1; GE reported $4 per $1 in healthcare savings (HBR)",
+      "Companies with effective wellness programs are 40% more likely to report better financial performance (HBR)",
+      "NAD+ supplementation elevates circulating NAD+ by 130–150% in clinical trials (2025 PRISMA Review)",
     ],
   },
 };

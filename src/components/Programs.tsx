@@ -1,4 +1,4 @@
-import { Scale, Brain, Activity, Sparkles, ArrowRight, Check, ChevronDown, TrendingDown } from "lucide-react";
+import { Scale, Brain, Activity, Sparkles, Check, ChevronDown, TrendingUp } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 const categories: {
@@ -21,10 +21,11 @@ const categories: {
     description:
       "FDA-backed GLP-1 programs with brand-name and compounded options. Semaglutide and tirzepatide with personalized dosing, ongoing monitoring, and clinical support — delivered in days, not months.",
     studies: [
-      { stat: "~15% average body weight loss with semaglutide 2.4mg over 68 weeks", source: "STEP 1 Trial — NEJM, 2021" },
-      { stat: "Up to 22.5% body weight reduction with tirzepatide (15mg) over 72 weeks", source: "SURMOUNT-1 Trial — NEJM, 2022" },
-      { stat: "Obese employees cost employers $1,861 more per year in medical claims vs. healthy-weight peers", source: "Journal of Occupational & Environmental Medicine" },
-      { stat: "36% fewer sick days reported among employees who achieved clinically meaningful weight loss", source: "CDC Workplace Health Promotion" },
+      { stat: "14.9% average body weight loss with semaglutide 2.4mg — 86% of patients lost 5%+ body weight", source: "STEP 1 Trial — New England Journal of Medicine, 2021" },
+      { stat: "Up to 22.5% body weight loss with tirzepatide 15mg — 63% of patients achieved 20%+ reduction", source: "SURMOUNT-1 Trial — New England Journal of Medicine, 2022" },
+      { stat: "GLP-1 patients saw a 40%+ reduction in major cardiac events and 7% lower medical costs within 2 years", source: "Aon Employer Study, 2025" },
+      { stat: "Losing 5% body weight saves ~$670/year per employee in healthcare costs; 25% loss saves $2,849/year", source: "JAMA — Cost Analysis" },
+      { stat: "43% of large employers (5,000+ workers) now cover GLP-1s for weight loss, up from 28% in 2024", source: "KFF/Peterson Health System Tracker, 2025" },
     ],
     features: [
       "Brand-name (Wegovy, Zepbound) and compounded options",
@@ -33,7 +34,7 @@ const categories: {
       "Structured follow-ups with dose optimization",
       "No insurance pre-authorization needed",
     ],
-    bottomStat: { value: "~20%", label: "average body weight loss with tirzepatide" },
+    bottomStat: { value: "22.5%", label: "max weight loss achieved in SURMOUNT-1" },
     accentColor: "text-blue",
     Icon: Scale,
   },
@@ -45,10 +46,11 @@ const categories: {
     description:
       "Virtual mental health care your employees can actually access — same-week appointments, no referral hoops, and structured programs for the conditions that impact work the most.",
     studies: [
-      { stat: "Depression and anxiety cost the global economy $1 trillion per year in lost productivity", source: "World Health Organization, 2022" },
-      { stat: "Employees with untreated depression are 35% less productive and miss 4x more workdays", source: "American Psychiatric Association" },
-      { stat: "Every $1 invested in mental health treatment returns $4 in improved health and productivity", source: "WHO — Mental Health in the Workplace" },
-      { stat: "76% of employees report at least one symptom of a mental health condition", source: "Mind Share Partners — 2024 Workplace Report" },
+      { stat: "12 billion working days lost annually to depression and anxiety, costing $1 trillion/year in lost productivity", source: "World Health Organization — Mental Health at Work, 2024" },
+      { stat: "Workers with poor mental health miss ~12 days/year vs. 2.5 days for those with good mental health — costing $47.6B/year", source: "Gallup Workplace Study" },
+      { stat: "Every $1 spent on mental health programs returns $5.39 in reduced absenteeism, presenteeism, and turnover", source: "CuraLinc Healthcare — Peer-Reviewed Study (166,000+ cases)" },
+      { stat: "Depressed employees are 35% less productive and miss an average of 31.4 workdays per year", source: "American Psychiatric Association — Workplace Mental Health" },
+      { stat: "80%+ of virtual therapy participants report outcomes comparable to or better than in-office sessions", source: "JMIR Mental Health, 2024" },
     ],
     features: [
       "Same-week virtual therapy and psychiatric consultations",
@@ -57,7 +59,7 @@ const categories: {
       "Progress tracking and structured follow-ups",
       "No 3–6 month waitlists like traditional insurance",
     ],
-    bottomStat: { value: "4x", label: "return on every $1 invested in mental health" },
+    bottomStat: { value: "$5.39", label: "returned for every $1 invested in mental health" },
     accentColor: "text-purple",
     Icon: Brain,
   },
@@ -69,10 +71,11 @@ const categories: {
     description:
       "Lab-verified testosterone therapy for men and comprehensive menopause care for women — the high-impact programs that traditional insurance almost never covers well.",
     studies: [
-      { stat: "Low testosterone affects an estimated 1 in 4 men over 30 and is linked to fatigue, low mood, and reduced cognitive function", source: "AUA Clinical Guidelines, 2018" },
-      { stat: "1 in 10 women leave the workforce due to menopause symptoms; 25% consider leaving", source: "Mayo Clinic Proceedings, 2023" },
-      { stat: "Menopause-related productivity loss costs U.S. employers an estimated $1.8 billion annually", source: "Mayo Clinic — Menopause & Workplace Study, 2023" },
-      { stat: "TRT patients report 33% improvement in energy, mood, and overall quality of life within 3–6 months", source: "The Journal of Clinical Endocrinology & Metabolism" },
+      { stat: "10–40% of adult men have testosterone deficiency — projected 6.5 million U.S. men affected by 2025", source: "Journal of Clinical Endocrinology & Metabolism" },
+      { stat: "13.4% of women report adverse work outcomes from menopause; those with untreated symptoms have 57% greater productivity loss", source: "Mayo Clinic Proceedings, 2023" },
+      { stat: "Global productivity losses from menopausal symptoms estimated at $150 billion; healthcare costs exceed $600 billion", source: "AARP Research" },
+      { stat: "1 in 10 women leave the workforce entirely due to menopause symptoms; 25% consider leaving", source: "Mayo Clinic — Menopause & Workplace Study, 2023" },
+      { stat: "HRT is the most efficacious treatment for vasomotor and urogenital symptoms with additional bone density benefits", source: "2025 Meta-Analysis — PMC" },
     ],
     features: [
       "Testosterone therapy (topical and injectable options)",
@@ -81,7 +84,7 @@ const categories: {
       "Structured follow-ups every 1–3 months",
       "Symptom tracking and dose optimization",
     ],
-    bottomStat: { value: "$1.8B", label: "annual employer cost from menopause symptoms" },
+    bottomStat: { value: "$150B", label: "global productivity loss from menopause" },
     accentColor: "text-orange",
     Icon: Activity,
   },
@@ -93,10 +96,11 @@ const categories: {
     description:
       "Proactive wellness programs that go beyond sick care — NAD+, metabolic optimization, and anti-aging therapies that position your company as a forward-thinking employer.",
     studies: [
-      { stat: "The global longevity and anti-aging market is projected to exceed $120 billion by 2030", source: "Grand View Research, 2023" },
-      { stat: "Companies with comprehensive wellness programs see 25% lower absenteeism and 32% lower turnover", source: "Harvard Business Review — Wellness Programs Meta-Analysis" },
-      { stat: "NAD+ supplementation improved physical performance and reduced biological age markers in clinical trials", source: "Nature Aging — NAD+ Clinical Review, 2022" },
-      { stat: "Employer wellness programs return $1.50–$3.00 for every $1 spent through reduced healthcare costs", source: "RAND Corporation — Workplace Wellness Study" },
+      { stat: "Global anti-aging market is ~$80B today, projected to exceed $120 billion by 2030 (7% CAGR)", source: "Precedence Research / Grand View Research, 2025" },
+      { stat: "Companies with highly effective wellness programs are 40% more likely to report better financial performance", source: "Harvard Business Review — Wellness ROI" },
+      { stat: "Oral NMN/NR supplementation consistently elevates circulating NAD+ by 130–150% in clinical trials", source: "2025 PRISMA Systematic Review — ScienceDirect (33 human studies)" },
+      { stat: "Johnson & Johnson's 10+ year wellness program delivered $2.71 ROI per $1 spent; GE reported $4 per $1", source: "Harvard Business Review — Corporate Case Studies" },
+      { stat: "95% of companies tracking wellness ROI report positive returns; two-thirds see at least $2 back per $1 spent", source: "Wellhub Global Survey — 2,000 HR Leaders, 2024" },
     ],
     features: [
       "NAD+ and glutathione therapy",
@@ -105,7 +109,7 @@ const categories: {
       "Medical-grade skincare (retinoids, hyaluronic acid)",
       "Add-ons: red light therapy, collagen, cold therapy",
     ],
-    bottomStat: { value: "$120B+", label: "projected market size by 2030" },
+    bottomStat: { value: "$6", label: "returned per $1 in best-in-class wellness programs" },
     accentColor: "text-amber",
     Icon: Sparkles,
   },
@@ -150,7 +154,7 @@ export function Programs() {
               </p>
 
               {/* Clinical Studies */}
-              <div className="mb-5 space-y-2.5">
+              <div className="mb-5 space-y-2">
                 <h4 className="text-[11px] font-bold text-text-muted uppercase tracking-wider">Research & Evidence</h4>
                 {cat.studies.map((s, i) => (
                   <div key={i} className="bg-bg-alt rounded-xl px-4 py-3 border border-border/50">
@@ -171,7 +175,7 @@ export function Programs() {
               </ul>
 
               <div className="bg-bg-alt rounded-xl px-4 py-3 text-[13px] text-text-secondary flex items-center gap-2">
-                <TrendingDown size={16} className={cat.accentColor} strokeWidth={1.5} />
+                <TrendingUp size={16} className={cat.accentColor} strokeWidth={1.5} />
                 <span>
                   <strong className={`${cat.accentColor} text-base font-bold`}>{cat.bottomStat.value}</strong>{" "}
                   {cat.bottomStat.label}
