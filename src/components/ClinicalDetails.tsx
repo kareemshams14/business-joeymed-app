@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import {
-  Scale, Heart, Sparkles, ShieldCheck,
-  Check, Stethoscope,
+  Scale, Brain, Sparkles, ShieldCheck,
+  Check, Activity,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
-type Tab = "weight-loss" | "hormone-therapy" | "sexual-health" | "longevity";
+type Tab = "weight-loss" | "behavioral-health" | "hormone-therapy" | "longevity";
 
 /* ───── Color styles (explicit for Tailwind) ───── */
 
@@ -19,19 +19,19 @@ const colorStyles = {
     safetyBg: "bg-gradient-to-br from-blue/4 to-white",
     safetyBorder: "border-blue/10",
   },
+  purple: {
+    cardBg: "bg-purple/4",
+    cardBorder: "border-purple/8",
+    text: "text-purple",
+    safetyBg: "bg-gradient-to-br from-purple/4 to-white",
+    safetyBorder: "border-purple/10",
+  },
   orange: {
     cardBg: "bg-orange/4",
     cardBorder: "border-orange/8",
     text: "text-orange",
     safetyBg: "bg-gradient-to-br from-orange/4 to-white",
     safetyBorder: "border-orange/10",
-  },
-  rose: {
-    cardBg: "bg-rose/4",
-    cardBorder: "border-rose/8",
-    text: "text-rose",
-    safetyBg: "bg-gradient-to-br from-rose/4 to-white",
-    safetyBorder: "border-rose/10",
   },
   amber: {
     cardBg: "bg-amber/4",
@@ -48,104 +48,109 @@ type ColorKey = keyof typeof colorStyles;
 
 const tabs: { id: Tab; label: string; icon: LucideIcon; gradient: string; color: ColorKey }[] = [
   { id: "weight-loss", label: "Weight Loss", icon: Scale, gradient: "from-blue to-cyan", color: "blue" },
-  { id: "hormone-therapy", label: "Hormone Therapy", icon: Stethoscope, gradient: "from-orange to-amber", color: "orange" },
-  { id: "sexual-health", label: "Sexual Health", icon: Heart, gradient: "from-rose to-rose/60", color: "rose" },
-  { id: "longevity", label: "Anti-Aging & Longevity", icon: Sparkles, gradient: "from-amber to-amber/60", color: "amber" },
+  { id: "behavioral-health", label: "Behavioral Health", icon: Brain, gradient: "from-purple to-purple/60", color: "purple" },
+  { id: "hormone-therapy", label: "Hormone Therapy", icon: Activity, gradient: "from-orange to-amber", color: "orange" },
+  { id: "longevity", label: "Longevity & Wellness", icon: Sparkles, gradient: "from-amber to-amber/60", color: "amber" },
 ];
 
 const programs: Record<Tab, {
   title: string;
+  insuranceGap: string;
   subtitle: string;
   highlights: { title: string; desc: string }[];
   includes: string[];
-  safety: string[];
+  employerValue: string[];
 }> = {
   "weight-loss": {
-    title: "Medically Supervised Weight Loss",
-    subtitle: "Clinician-guided GLP-1 programs with personalized dosing, ongoing monitoring, and built-in safety checks.",
+    title: "Weight Loss Programs",
+    insuranceGap: "Insurance rarely covers GLP-1 medications — or makes it a months-long prior authorization nightmare.",
+    subtitle: "Personalized, physician-guided GLP-1 programs that employees can start in days, not months. Brand-name and compounded options with ongoing clinical support.",
     highlights: [
-      { title: "Personalized Plans", desc: "Multiple dosing tracks tailored to each patient's history, tolerance, and goals — not one-size-fits-all." },
-      { title: "Brand-Name & Compounded Options", desc: "Access to FDA-approved medications (Wegovy, Zepbound) as well as compounded alternatives for flexibility." },
-      { title: "Ongoing Support", desc: "Regular check-ins, side-effect management, and dose adjustments to keep patients on track long-term." },
+      { title: "No Insurance Barriers", desc: "Employees get access to semaglutide and tirzepatide without fighting their insurance company for months." },
+      { title: "Personalized Dosing", desc: "Multiple titration tracks matched to each person's history and tolerance — not a one-size-fits-all approach." },
+      { title: "Ongoing Clinical Support", desc: "Regular check-ins, side-effect management, and dose adjustments keep employees on track long-term." },
     ],
     includes: [
-      "Semaglutide & tirzepatide prescribing",
-      "Multiple titration schedules based on patient needs",
-      "Supportive supplements (B-complex, NAD, L-carnitine)",
-      "Structured follow-up and dose optimization",
-      "At-home lab testing available",
+      "GLP-1 prescribing (semaglutide & tirzepatide)",
+      "Brand-name and compounded medication options",
+      "Personalized dosing and titration schedules",
+      "Supportive supplements for adherence",
+      "Structured follow-ups and dose optimization",
     ],
-    safety: [
-      "Medical screening to ensure eligibility before starting",
-      "Built-in pregnancy safeguards and contraindication checks",
-      "Clear consent process covering risks and expectations",
-      "Ongoing monitoring with defined escalation criteria",
+    employerValue: [
+      "Obesity is the #1 driver of employer healthcare costs",
+      "Employees who lose weight have 25% fewer sick days",
+      "Reduces downstream chronic disease claims",
+      "High engagement — weight loss is the most requested benefit",
+    ],
+  },
+  "behavioral-health": {
+    title: "Behavioral Health",
+    insuranceGap: "Insurance covers therapy in theory — but waitlists are 3–6 months and most providers aren't accepting new patients.",
+    subtitle: "Virtual mental health support your employees can actually access. No waitlists, no referral hoops — just fast, convenient care when they need it.",
+    highlights: [
+      { title: "Same-Week Access", desc: "Employees connect with licensed providers in days, not months. No more sitting on insurance waitlists." },
+      { title: "Anxiety, Depression & More", desc: "Structured programs for the conditions that impact work the most — anxiety, depression, stress, and burnout." },
+      { title: "Virtual & Stigma-Free", desc: "Private telehealth sessions employees can do from home. No awkward office visits or insurance paperwork." },
+    ],
+    includes: [
+      "Virtual therapy and psychiatric consultations",
+      "Anxiety and depression treatment programs",
+      "Stress and burnout management",
+      "Medication management when appropriate",
+      "Structured follow-ups and progress tracking",
+    ],
+    employerValue: [
+      "Mental health issues cost employers $200B+ annually in lost productivity",
+      "Employees with untreated depression miss 4x more workdays",
+      "Behavioral health is the #1 most-requested benefit by employees",
+      "Reduces disability claims and improves retention",
     ],
   },
   "hormone-therapy": {
-    title: "Hormone Replacement Therapy",
-    subtitle: "Structured testosterone therapy for men and menopause care for women — lab-verified, physician-monitored, and fully compliant.",
+    title: "Hormone Therapy",
+    insuranceGap: "Insurance almost never covers testosterone therapy or comprehensive menopause care — leaving millions underserved.",
+    subtitle: "Lab-verified hormone therapy for men and women. Testosterone optimization, menopause management, and ongoing monitoring — all physician-supervised.",
     highlights: [
-      { title: "Men's Testosterone Therapy", desc: "Topical and injectable options with mandatory lab verification before starting and quarterly monitoring throughout." },
-      { title: "Women's Menopause Care", desc: "Individualized estrogen, progesterone, and vaginal therapies to manage hot flashes, mood changes, and other symptoms." },
-      { title: "Lab-Driven Decisions", desc: "Every treatment plan is backed by bloodwork — initial labs to qualify and follow-up labs to optimize." },
+      { title: "Men's Health", desc: "Testosterone therapy with required lab verification, multiple delivery options, and quarterly monitoring to ensure safety and results." },
+      { title: "Women's Menopause Care", desc: "Individualized estrogen and progesterone therapy for hot flashes, mood changes, sleep issues, and other menopause symptoms." },
+      { title: "Lab-Driven & Monitored", desc: "Every treatment starts with bloodwork and includes regular follow-up labs — no guesswork." },
     ],
     includes: [
-      "Testosterone (topical lotions and injectables)",
-      "Estrogen therapy (gel, patch, oral, spray)",
-      "Progesterone and vaginal estrogen options",
+      "Testosterone therapy (topical and injectable)",
+      "Estrogen and progesterone therapy",
       "Initial and quarterly lab panels",
-      "Structured follow-up every 1–3 months",
+      "Structured follow-ups every 1–3 months",
+      "Symptom tracking and dose optimization",
     ],
-    safety: [
-      "Lab-confirmed hormone levels required before initiation",
-      "Comprehensive screening questionnaires for red flags",
-      "Clear referral criteria for adverse effects or abnormal results",
-      "Continuous monitoring with timely dose adjustments",
-    ],
-  },
-  "sexual-health": {
-    title: "Sexual Health Programs",
-    subtitle: "Discreet, evidence-based treatment for men and women — covering common conditions that affect millions but are rarely addressed.",
-    highlights: [
-      { title: "Men's Programs", desc: "Erectile dysfunction and premature ejaculation treatments using proven PDE5 inhibitors, SSRIs, and combination therapies." },
-      { title: "Women's Programs", desc: "Desire and arousal support through innovative therapies like PT-141 and oxytocin — filling a major gap in the market." },
-      { title: "Discreet & Convenient", desc: "Direct-to-door delivery, virtual consultations, and subscription-based refills remove stigma and friction." },
-    ],
-    includes: [
-      "FDA-approved ED medications (sildenafil, tadalafil, and more)",
-      "SSRI-based premature ejaculation treatment",
-      "Women's desire therapy (PT-141, oxytocin)",
-      "Add-on products (desensitizing wipes, creams)",
-      "6-month follow-up consultations",
-    ],
-    safety: [
-      "Medical history review to rule out contraindications",
-      "Drug interaction screening at intake",
-      "Structured follow-ups to assess efficacy and side effects",
-      "Clear protocols for dose adjustments or discontinuation",
+    employerValue: [
+      "Low testosterone and menopause symptoms drive fatigue, brain fog, and absenteeism",
+      "Menopause benefits are the fastest-growing category in HR",
+      "Hormone optimization improves energy, focus, and workplace performance",
+      "Positions your company as a modern, inclusive employer",
     ],
   },
   longevity: {
-    title: "Anti-Aging & Longevity",
-    subtitle: "Proactive wellness programs focused on cellular health, energy, and long-term vitality — the fastest-growing segment in telehealth.",
+    title: "Longevity & Wellness",
+    insuranceGap: "Insurance covers nothing in the proactive wellness space — no NAD, no metabolic optimization, no anti-aging therapies.",
+    subtitle: "Forward-thinking wellness programs that go beyond sick care. Cellular health, metabolic optimization, and anti-aging therapies that keep employees performing at their best.",
     highlights: [
-      { title: "Cellular Health", desc: "NAD+, glutathione, and metabolic therapies to support energy production, detoxification, and cellular repair." },
-      { title: "Skin & Appearance", desc: "Medical-grade retinoids, hyaluronic acid, and complementary add-ons like red light therapy and microneedling." },
-      { title: "Metabolic Optimization", desc: "Metformin, B12, and personalized supplement stacks to support healthy aging from the inside out." },
+      { title: "Cellular Health", desc: "NAD+, glutathione, and metabolic therapies that support energy, recovery, and long-term vitality." },
+      { title: "Metabolic Optimization", desc: "Metformin, B12, and personalized supplement protocols for healthy aging from the inside out." },
+      { title: "Premium Wellness Perks", desc: "Red light therapy, medical-grade skincare, and recovery add-ons that employees genuinely value." },
     ],
     includes: [
       "NAD+ and glutathione therapy",
-      "Metformin for metabolic longevity",
+      "Metformin for metabolic health",
       "Vitamin B12 injections",
-      "Medical-grade skincare (retinoids, HA)",
-      "Add-ons: red light therapy, collagen, cold therapy",
+      "Medical-grade skincare protocols",
+      "Wellness add-ons (red light, collagen, cold therapy)",
     ],
-    safety: [
-      "Physician review of health history before enrollment",
-      "Personalized protocols based on individual health goals",
-      "Regular 6-month follow-up consultations",
-      "Clear guidelines for supplement and therapy interactions",
+    employerValue: [
+      "Positions your company alongside top tech firms offering premium perks",
+      "Proactive wellness reduces long-term healthcare spend",
+      "High perceived value — employees see this as a premium benefit",
+      "Strong retention tool for competitive talent markets",
     ],
   },
 };
@@ -161,17 +166,17 @@ export function ClinicalDetails() {
   return (
     <section id="clinical" className="py-24 bg-bg-alt">
       <div className="max-w-[1200px] mx-auto px-6">
-        <div className="text-center max-w-[680px] mx-auto mb-12">
+        <div className="text-center max-w-[720px] mx-auto mb-12">
           <span className="inline-block px-3 py-1 bg-blue/6 text-blue rounded-md text-[11px] font-semibold uppercase tracking-[0.15em] mb-4">
-            Clinical Programs
+            What We Cover
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold leading-tight tracking-tight mb-4">
-            What we treat &{" "}
-            <span className="gradient-text">how we do it</span>
+            Benefits your insurance{" "}
+            <span className="gradient-text">doesn&apos;t cover</span>
           </h2>
           <p className="text-[17px] text-text-secondary leading-relaxed">
-            Every program is physician-supervised with built-in safety checks,
-            structured follow-ups, and evidence-based protocols.
+            We focus on the high-impact programs that traditional insurance
+            either excludes, underfunds, or makes nearly impossible to access.
           </p>
         </div>
 
@@ -200,10 +205,19 @@ export function ClinicalDetails() {
 
         {/* Content */}
         <div className="space-y-6">
+          {/* Insurance Gap Callout */}
+          <div className={`${styles.safetyBg} rounded-2xl px-6 py-4 border ${styles.safetyBorder} flex items-start gap-3`}>
+            <ShieldCheck size={18} className={`${styles.text} shrink-0 mt-0.5`} strokeWidth={1.5} />
+            <p className="text-[14px] text-text-secondary leading-relaxed">
+              <strong className="text-text-primary">The insurance gap:</strong>{" "}
+              {data.insuranceGap}
+            </p>
+          </div>
+
           {/* Header Card */}
           <div className="bg-white rounded-3xl p-8 sm:p-10 border border-border">
             <h3 className="text-2xl font-bold mb-2">{data.title}</h3>
-            <p className="text-[15px] text-text-secondary leading-relaxed mb-8 max-w-[700px]">
+            <p className="text-[15px] text-text-secondary leading-relaxed mb-8 max-w-[720px]">
               {data.subtitle}
             </p>
 
@@ -218,7 +232,7 @@ export function ClinicalDetails() {
             </div>
           </div>
 
-          {/* What's Included + Safety */}
+          {/* What's Included + Employer Value */}
           <div className="grid sm:grid-cols-2 gap-6">
             <div className="bg-white rounded-3xl p-8 sm:p-10 border border-border">
               <h4 className="text-lg font-bold mb-5">What&apos;s Included</h4>
@@ -234,10 +248,10 @@ export function ClinicalDetails() {
             <div className={`${styles.safetyBg} rounded-3xl p-8 sm:p-10 border ${styles.safetyBorder}`}>
               <div className="flex items-center gap-3 mb-5">
                 <ShieldCheck size={20} className={styles.text} strokeWidth={1.5} />
-                <h4 className="text-lg font-bold">Safety & Compliance</h4>
+                <h4 className="text-lg font-bold">Why Employers Invest</h4>
               </div>
               <ul className="space-y-3">
-                {data.safety.map((item, i) => (
+                {data.employerValue.map((item, i) => (
                   <li key={i} className="flex gap-3 text-[13px] text-text-secondary leading-relaxed">
                     <Check size={14} className={`${styles.text} shrink-0 mt-0.5`} strokeWidth={2} />
                     {item}
