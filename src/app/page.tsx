@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero";
 import { WhyInvest } from "@/components/WhyInvest";
 import { Programs } from "@/components/Programs";
 import { ClinicalDetails } from "@/components/ClinicalDetails";
+import { Infographics } from "@/components/Infographics";
 import { SocialProof } from "@/components/SocialProof";
 import { HowItWorks } from "@/components/HowItWorks";
 import { ForEmployers } from "@/components/ForEmployers";
@@ -30,6 +31,7 @@ export default function Home() {
       <WhyInvest />
       <Programs />
       <ClinicalDetails />
+      <Infographics />
       <HowItWorks />
       <Results />
       <ForEmployers />
