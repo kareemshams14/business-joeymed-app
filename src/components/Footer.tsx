@@ -11,30 +11,28 @@ const footerCols = [
     ],
   },
   {
-    title: "Solutions",
+    title: "Programs",
     links: [
-      { label: "Weight Loss Programs", href: "#programs" },
-      { label: "TRT & Female HRT", href: "#programs" },
-      { label: "Sexual Health", href: "#programs" },
-      { label: "Anti-Aging & Longevity", href: "#programs" },
-      { label: "Clinical Protocols", href: "#clinical" },
+      { label: "Weight Loss", href: "#clinical" },
+      { label: "Behavioral Health", href: "#clinical" },
+      { label: "Hormone Therapy", href: "#clinical" },
+      { label: "Longevity & Wellness", href: "#clinical" },
     ],
   },
   {
     title: "Company",
     links: [
-      { label: "About JoeyMed", href: "#" },
-      { label: "Careers", href: "#" },
+      { label: "About JoeyMed", href: "https://joeymed.com/about-us", external: true },
       { label: "Contact", href: "#contact" },
     ],
   },
   {
     title: "Legal",
     links: [
-      { label: "Privacy Policy", href: "#" },
-      { label: "Terms of Service", href: "#" },
-      { label: "HIPAA Compliance", href: "#" },
-      { label: "BAA", href: "#" },
+      { label: "Privacy Policy", href: "https://joeymed.com/privacy-policy", external: true },
+      { label: "Terms & Conditions", href: "https://joeymed.com/terms-conditions", external: true },
+      { label: "Telehealth Consent", href: "https://joeymed.com/telehealth-consent", external: true },
+      { label: "Refund Policy", href: "https://joeymed.com/refund-cancellation", external: true },
     ],
   },
 ];
@@ -46,7 +44,7 @@ export function Footer() {
         <div className="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-10 mb-14">
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
-            <a href="#" className="flex items-center gap-3 mb-4">
+            <a href="#top" className="flex items-center gap-3 mb-4">
               <Image src="/logo.svg" alt="JoeyMed" width={90} height={45} className="h-8 w-auto brightness-0 invert opacity-80" />
               <span className="text-[9px] font-semibold text-white/25 uppercase tracking-[0.15em] border-l border-white/10 pl-3">
                 for Business
@@ -68,6 +66,7 @@ export function Footer() {
                 <a
                   key={link.label}
                   href={link.href}
+                  {...("external" in link && link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className="block text-[13px] py-1.5 hover:text-white/80 transition-colors"
                 >
                   {link.label}

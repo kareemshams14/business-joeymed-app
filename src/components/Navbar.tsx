@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const navLinks = [
   { href: "#programs", label: "Programs" },
-  { href: "#clinical", label: "Clinical Protocols" },
+  { href: "#clinical", label: "What We Cover" },
   { href: "#how-it-works", label: "How It Works" },
   { href: "#employers", label: "For Employers" },
   { href: "#plans", label: "Plans" },
@@ -20,7 +20,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-2xl border-b border-border/60">
       <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-[68px]">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-3">
+        <a href="#top" className="flex items-center gap-3">
           <Image src="/logo.svg" alt="JoeyMed" width={100} height={50} className="h-9 w-auto" priority />
           <span className="text-[10px] font-semibold text-text-muted uppercase tracking-[0.15em] border-l border-border pl-3">
             for Business

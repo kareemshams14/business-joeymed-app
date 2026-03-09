@@ -159,7 +159,7 @@ export function ContactCTA() {
 
               <p className="mt-3 text-[11px] text-text-muted text-center">
                 By submitting, you agree to our{" "}
-                <a href="#" className="text-blue underline underline-offset-2">
+                <a href="https://joeymed.com/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-blue underline underline-offset-2">
                   Privacy Policy
                 </a>
                 . We&apos;ll never share your information.
