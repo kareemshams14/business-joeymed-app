@@ -1,13 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { href: "#programs", label: "Programs" },
   { href: "#clinical", label: "Clinical Protocols" },
   { href: "#how-it-works", label: "How It Works" },
   { href: "#employers", label: "For Employers" },
-  { href: "#app", label: "The App" },
   { href: "#plans", label: "Plans" },
   { href: "#faq", label: "FAQ" },
 ];
@@ -19,16 +20,9 @@ export function Navbar() {
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-2xl border-b border-border/60">
       <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-[68px]">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue to-blue-dark flex items-center justify-center">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M4 8h8M8 4v8" stroke="white" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-          </div>
-          <span className="text-xl font-bold tracking-tight">
-            Joey<span className="text-blue">Med</span>
-          </span>
-          <span className="hidden sm:inline text-[10px] font-semibold text-text-muted uppercase tracking-[0.15em] ml-1 border-l border-border pl-2">
+        <a href="#" className="flex items-center gap-3">
+          <Image src="/logo.svg" alt="JoeyMed" width={100} height={50} className="h-9 w-auto" priority />
+          <span className="text-[10px] font-semibold text-text-muted uppercase tracking-[0.15em] border-l border-border pl-3">
             for Business
           </span>
         </a>
@@ -56,24 +50,10 @@ export function Navbar() {
           </a>
           <button
             onClick={() => setOpen(!open)}
-            className="lg:hidden flex flex-col gap-[5px] p-1"
+            className="lg:hidden p-1"
             aria-label="Toggle menu"
           >
-            <span
-              className={`block w-5 h-[1.5px] bg-text-primary rounded transition-all ${
-                open ? "rotate-45 translate-y-[7px]" : ""
-              }`}
-            />
-            <span
-              className={`block w-5 h-[1.5px] bg-text-primary rounded transition-all ${
-                open ? "opacity-0" : ""
-              }`}
-            />
-            <span
-              className={`block w-5 h-[1.5px] bg-text-primary rounded transition-all ${
-                open ? "-rotate-45 -translate-y-[7px]" : ""
-              }`}
-            />
+            {open ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>

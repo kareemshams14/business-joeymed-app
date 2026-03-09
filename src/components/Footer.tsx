@@ -1,10 +1,11 @@
+import Image from "next/image";
+
 const footerCols = [
   {
     title: "Platform",
     links: [
       { label: "Programs", href: "#programs" },
       { label: "How It Works", href: "#how-it-works" },
-      { label: "The App", href: "#app" },
       { label: "Results", href: "#results" },
       { label: "Plans", href: "#plans" },
     ],
@@ -24,7 +25,6 @@ const footerCols = [
     links: [
       { label: "About JoeyMed", href: "#" },
       { label: "Careers", href: "#" },
-      { label: "Press", href: "#" },
       { label: "Contact", href: "#contact" },
     ],
   },
@@ -46,16 +46,9 @@ export function Footer() {
         <div className="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-10 mb-14">
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
-            <a href="#" className="flex items-center gap-2 mb-4">
-              <div className="w-7 h-7 rounded-md bg-gradient-to-br from-blue to-blue-dark flex items-center justify-center">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                  <path d="M3 7h8M7 3v8" stroke="white" strokeWidth="2" strokeLinecap="round" />
-                </svg>
-              </div>
-              <span className="text-lg font-bold text-white tracking-tight">
-                Joey<span className="text-blue-glow">Med</span>
-              </span>
-              <span className="text-[9px] font-semibold text-white/25 uppercase tracking-[0.15em] ml-1 border-l border-white/10 pl-2">
+            <a href="#" className="flex items-center gap-3 mb-4">
+              <Image src="/logo.svg" alt="JoeyMed" width={90} height={45} className="h-8 w-auto brightness-0 invert opacity-80" />
+              <span className="text-[9px] font-semibold text-white/25 uppercase tracking-[0.15em] border-l border-white/10 pl-3">
                 for Business
               </span>
             </a>
@@ -63,18 +56,6 @@ export function Footer() {
               Employer-sponsored health management, powered by clinically
               supervised telehealth and at-home testing.
             </p>
-            <div className="flex gap-2">
-              {["In", "Li", "X"].map((s) => (
-                <a
-                  key={s}
-                  href="#"
-                  aria-label={s}
-                  className="w-9 h-9 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.06] flex items-center justify-center text-white/40 hover:text-white/70 transition-all text-[12px] font-semibold"
-                >
-                  {s}
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Link Columns */}

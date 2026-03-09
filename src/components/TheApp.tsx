@@ -1,3 +1,5 @@
+import { Bell } from "lucide-react";
+
 const features = [
   {
     title: "Guided At-Home Testing",
@@ -53,25 +55,9 @@ export function TheApp() {
             ))}
           </div>
 
-          <div className="flex gap-3">
-            <a
-              href="#"
-              className="inline-flex items-center gap-2 px-5 py-3 bg-navy text-white rounded-xl text-[13px] font-semibold hover:bg-navy-light transition-colors"
-            >
-              <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M17.05 12.57L4.82 19.5a1 1 0 01-1.5-.87V1.37a1 1 0 011.5-.87l12.23 6.93a1 1 0 010 1.74z" />
-              </svg>
-              Google Play
-            </a>
-            <a
-              href="#"
-              className="inline-flex items-center gap-2 px-5 py-3 bg-navy text-white rounded-xl text-[13px] font-semibold hover:bg-navy-light transition-colors"
-            >
-              <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M15.98 10.06c-.02-2.2 1.8-3.26 1.88-3.31-1.02-1.5-2.62-1.7-3.19-1.73-1.36-.14-2.65.8-3.34.8-.69 0-1.75-.78-2.88-.76-1.48.02-2.85.86-3.61 2.19-1.54 2.67-.39 6.63 1.11 8.8.73 1.06 1.61 2.25 2.76 2.21 1.11-.04 1.52-.72 2.86-.72 1.34 0 1.72.72 2.88.7 1.19-.02 1.95-1.08 2.67-2.15.84-1.23 1.19-2.42 1.21-2.48-.03-.01-2.32-.89-2.35-3.55z" />
-              </svg>
-              App Store
-            </a>
+          <div className="inline-flex items-center gap-2 px-5 py-3 bg-amber/8 text-amber border border-amber/15 rounded-xl text-[13px] font-semibold">
+            <Bell size={16} />
+            App coming soon — join the waitlist
           </div>
         </div>
 
@@ -125,6 +111,11 @@ export function TheApp() {
                   </div>
                   <strong className="text-[12px] text-teal">92%</strong>
                 </div>
+              </div>
+
+              {/* Coming Soon Overlay */}
+              <div className="mt-auto bg-blue/6 rounded-xl px-4 py-3 text-center">
+                <span className="text-[11px] font-semibold text-blue uppercase tracking-wider">Coming Soon</span>
               </div>
             </div>
           </div>

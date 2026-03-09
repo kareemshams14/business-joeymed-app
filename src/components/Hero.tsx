@@ -1,3 +1,5 @@
+import { ArrowRight, ShieldCheck, Globe, BarChart3, CircleCheckBig, Plus } from "lucide-react";
+
 export function Hero() {
   return (
     <section className="relative bg-navy overflow-hidden">
@@ -28,9 +30,7 @@ export function Hero() {
               className="btn-primary inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-[15px]"
             >
               Request a Demo
-              <svg className="ml-2" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+              <ArrowRight size={16} className="ml-2" />
             </a>
             <a
               href="#how-it-works"
@@ -43,23 +43,11 @@ export function Hero() {
           {/* Trust signals */}
           <div className="flex flex-wrap items-center gap-6 text-[13px] text-white/35">
             <div className="flex items-center gap-2">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M8 1l2 4h4l-3 3 1 4-4-2-4 2 1-4-3-3h4l2-4z" fill="currentColor" opacity="0.5"/>
-              </svg>
-              <span>200+ employers</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" strokeWidth="1.5" opacity="0.5"/>
-                <path d="M5 8l2 2 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.5"/>
-              </svg>
+              <ShieldCheck size={15} className="opacity-50" />
               <span>HIPAA compliant</span>
             </div>
             <div className="flex items-center gap-2">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <circle cx="8" cy="8" r="6" stroke="currentColor" strokeWidth="1.5" opacity="0.5"/>
-                <path d="M8 4v4l3 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.5"/>
-              </svg>
+              <Globe size={15} className="opacity-50" />
               <span>All 50 states</span>
             </div>
           </div>
@@ -71,9 +59,7 @@ export function Hero() {
           <div className="card-glass p-8 relative z-10">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-xl bg-white/[0.06] flex items-center justify-center">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M3 17V7M8 17V3M13 17v-6M18 17V9" stroke="#60A5FA" strokeWidth="2" strokeLinecap="round"/>
-                </svg>
+                <BarChart3 size={20} className="text-blue-glow" />
               </div>
               <div>
                 <h3 className="text-white font-semibold">Population Health Dashboard</h3>
@@ -106,9 +92,7 @@ export function Hero() {
           {/* Floating card — retention */}
           <div className="absolute -top-3 -right-3 z-20 card-glass py-4 px-5 flex items-center gap-3 animate-float">
             <div className="w-9 h-9 rounded-lg bg-teal/15 flex items-center justify-center">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <path d="M4 9l4 4 6-7" stroke="#14B8A6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+              <CircleCheckBig size={18} className="text-teal" />
             </div>
             <div>
               <span className="text-[11px] text-white/35 block">Retention</span>
@@ -119,10 +103,7 @@ export function Hero() {
           {/* Floating card — clinical */}
           <div className="absolute bottom-5 -left-5 z-20 card-glass py-4 px-5 flex items-center gap-3 animate-float-delayed">
             <div className="w-9 h-9 rounded-lg bg-blue/15 flex items-center justify-center">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <circle cx="9" cy="9" r="6" stroke="#60A5FA" strokeWidth="1.5"/>
-                <path d="M9 6v6M6 9h6" stroke="#60A5FA" strokeWidth="1.5" strokeLinecap="round"/>
-              </svg>
+              <Plus size={18} className="text-blue-glow" />
             </div>
             <div>
               <span className="text-[11px] text-white/35 block">Clinical Support</span>

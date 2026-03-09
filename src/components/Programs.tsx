@@ -1,4 +1,18 @@
-const categories = [
+import { Scale, Syringe, Heart, Sparkles, ArrowRight, Check, ChevronDown } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+
+const categories: {
+  id: string;
+  badge: string;
+  badgeClass: string;
+  title: string;
+  description: string;
+  programs: string[];
+  features: string[];
+  stat: { value: string; label: string };
+  accentColor: string;
+  Icon: LucideIcon;
+}[] = [
   {
     id: "weight-loss",
     badge: "Weight Loss",
@@ -18,7 +32,7 @@ const categories = [
     ],
     stat: { value: "2", label: "distinct program tracks" },
     accentColor: "text-blue",
-    iconColor: "#3B82F6",
+    Icon: Scale,
   },
   {
     id: "hormones",
@@ -39,7 +53,7 @@ const categories = [
     ],
     stat: { value: "87%", label: "report improved energy (TRT)" },
     accentColor: "text-orange",
-    iconColor: "#F97316",
+    Icon: Syringe,
   },
   {
     id: "sexual-health",
@@ -61,7 +75,7 @@ const categories = [
     ],
     stat: { value: "$40B+", label: "global market by 2027" },
     accentColor: "text-rose",
-    iconColor: "#E11D48",
+    Icon: Heart,
   },
   {
     id: "longevity",
@@ -82,18 +96,9 @@ const categories = [
     ],
     stat: { value: "$120B+", label: "global market by 2030" },
     accentColor: "text-amber",
-    iconColor: "#D97706",
+    Icon: Sparkles,
   },
 ];
-
-function PlusIcon({ color }: { color: string }) {
-  return (
-    <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-      <rect width="44" height="44" rx="12" fill={color} fillOpacity="0.08" />
-      <path d="M22 15v14M15 22h14" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
-  );
-}
 
 export function Programs() {
   return (
@@ -118,7 +123,9 @@ export function Programs() {
           {categories.map((cat) => (
             <div key={cat.id} className="card-premium p-8 sm:p-9">
               <div className="flex items-start gap-4 mb-5">
-                <PlusIcon color={cat.iconColor} />
+                <div className={`w-11 h-11 rounded-xl ${cat.badgeClass.split(" ")[0]} flex items-center justify-center shrink-0`}>
+                  <cat.Icon size={22} className={cat.accentColor} strokeWidth={1.5} />
+                </div>
                 <div>
                   <span className={`inline-block px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider mb-1.5 ${cat.badgeClass}`}>
                     {cat.badge}
@@ -134,9 +141,7 @@ export function Programs() {
               <div className="mb-5 space-y-2">
                 {cat.programs.map((p) => (
                   <div key={p} className="flex gap-2.5 text-[13px]">
-                    <svg className={`${cat.accentColor} shrink-0 mt-0.5`} width="14" height="14" viewBox="0 0 14 14" fill="none">
-                      <path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
+                    <ArrowRight size={14} className={`${cat.accentColor} shrink-0 mt-0.5`} strokeWidth={1.5} />
                     <span className="text-text-secondary">{p}</span>
                   </div>
                 ))}
@@ -145,9 +150,7 @@ export function Programs() {
               <ul className="mb-5">
                 {cat.features.map((f) => (
                   <li key={f} className="py-1.5 pl-6 relative text-[13px] text-text-secondary border-b border-border/50 last:border-0">
-                    <svg className={`absolute left-0 top-2 ${cat.accentColor}`} width="14" height="14" viewBox="0 0 14 14" fill="none">
-                      <path d="M3 7l3 3 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
+                    <Check size={14} className={`absolute left-0 top-2 ${cat.accentColor}`} strokeWidth={2} />
                     {f}
                   </li>
                 ))}
@@ -164,9 +167,7 @@ export function Programs() {
         <div className="text-center mt-10">
           <a href="#clinical" className="btn-primary inline-flex items-center justify-center px-7 py-3.5 rounded-xl font-semibold text-[15px]">
             Explore Clinical Protocols
-            <svg className="ml-2" width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M8 3v10M5 10l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+            <ChevronDown size={16} className="ml-2" />
           </a>
         </div>
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { Check } from "lucide-react";
 
 const highlights = [
   "No setup fees",
@@ -34,9 +35,7 @@ export function ContactCTA() {
             {highlights.map((h) => (
               <div key={h} className="flex items-center gap-3">
                 <div className="w-6 h-6 rounded-md bg-blue/8 flex items-center justify-center shrink-0">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M3 7l3 3 5-5" stroke="#3B82F6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                  <Check size={14} className="text-blue" strokeWidth={2} />
                 </div>
                 <span className="text-[15px] font-medium">{h}</span>
               </div>
@@ -49,9 +48,7 @@ export function ContactCTA() {
           {submitted ? (
             <div className="text-center py-12">
               <div className="w-14 h-14 rounded-full bg-teal/10 flex items-center justify-center mx-auto mb-4">
-                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                  <path d="M7 14l5 5 9-9" stroke="#14B8A6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                <Check size={28} className="text-teal" strokeWidth={2} />
               </div>
               <h3 className="text-xl font-bold mb-2">Thank you!</h3>
               <p className="text-text-secondary text-[15px]">
