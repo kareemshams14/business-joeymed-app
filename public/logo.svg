@@ -9,7 +9,7 @@
       <stop offset="100%" stop-color="#3BB8E0"/>
     </linearGradient>
   </defs>
-  <rect x="10" y="64" width="120" height="3" rx="1.5" fill="url(#line-grad)"/>
+  <rect x="10" y="64" width="90" height="3" rx="1.5" fill="url(#line-grad)"/>
   <!-- med text -->
   <text x="18" y="90" font-family="Inter, sans-serif" font-size="32" font-weight="400" fill="#0A1E3F" letter-spacing="12">med</text>
 </svg>
