@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
+import { WhyInvest } from "@/components/WhyInvest";
 import { Programs } from "@/components/Programs";
 import { ClinicalDetails } from "@/components/ClinicalDetails";
 import { SocialProof } from "@/components/SocialProof";
@@ -26,6 +27,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <SocialProof />
+      <WhyInvest />
       <Programs />
       <ClinicalDetails />
       <HowItWorks />

@@ -1,35 +1,53 @@
-import { CheckCircle2, DollarSign, BarChart3, Award, Smartphone, Globe } from "lucide-react";
+import {
+  CheckCircle2, DollarSign, BarChart3, Award, Smartphone, Globe,
+  ArrowRight,
+} from "lucide-react";
 
 const benefits = [
   {
     title: "Zero Admin Overhead",
-    desc: "We handle enrollment, eligibility, screening kit logistics, clinical review, prescriptions, and ongoing support. Your HR team stays focused.",
+    desc: "We handle enrollment, eligibility, screening kit logistics, clinical review, prescriptions, and ongoing support. Your HR team stays focused on what matters.",
     icon: CheckCircle2,
   },
   {
-    title: "Flexible Cost Models",
-    desc: "Choose fully subsidized, partially subsidized, or employee-paid. Partner with your PBM or use our direct-to-employee purchasing.",
+    title: "Lower Insurance Premiums",
+    desc: "Healthier employees file fewer chronic disease claims. Our programs help reduce your group insurance costs by addressing obesity, hormonal imbalances, and metabolic risk factors.",
     icon: DollarSign,
   },
   {
-    title: "Population Health Dashboard",
-    desc: "Aggregated, de-identified insights into participation, engagement metrics, outcomes, and retention — all real-time.",
+    title: "Real-Time Population Insights",
+    desc: "Aggregated, de-identified dashboards showing enrollment, engagement, outcomes, and retention — giving you clear visibility into program ROI.",
     icon: BarChart3,
   },
   {
-    title: "Clinical Excellence",
-    desc: "Board-certified providers manage screening, prescription, titration, side-effect management, and long-term adherence.",
+    title: "Board-Certified Clinicians",
+    desc: "Every prescription, titration, and follow-up is managed by licensed specialists. Clinical excellence means better outcomes and fewer liability concerns.",
     icon: Award,
   },
   {
-    title: "White-Label Experience",
-    desc: "Offer a branded employee experience through our mobile app — customizable with your company colors and messaging.",
+    title: "White-Label Your Brand",
+    desc: "Offer a branded employee experience through our mobile app — customizable with your company colors, messaging, and wellness goals.",
     icon: Smartphone,
   },
   {
-    title: "Nationwide Coverage",
-    desc: "Licensed providers in all 50 states. At-home kits shipped anywhere in the US. No geographic limitations.",
+    title: "All 50 States, One Platform",
+    desc: "Licensed providers nationwide. At-home kits shipped anywhere in the US. Roll out to distributed teams without geographic limitations.",
     icon: Globe,
+  },
+];
+
+const sellingPoints = [
+  {
+    metric: "Reduced absenteeism",
+    detail: "Employees managing chronic conditions miss fewer days. Programs targeting weight, hormones, and energy directly reduce sick days and presenteeism.",
+  },
+  {
+    metric: "Competitive recruiting edge",
+    detail: "GLP-1, HRT, and wellness benefits are the most in-demand perks in 2026. Offering them positions you as a forward-thinking employer.",
+  },
+  {
+    metric: "Measurable outcomes",
+    detail: "Track weight loss trends, medication adherence, retention rates, and engagement scores — tied to real business metrics your C-suite cares about.",
   },
 ];
 
@@ -43,17 +61,17 @@ export function ForEmployers() {
             For Employers
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold leading-tight tracking-tight mb-4">
-            Reduce healthcare costs.{" "}
-            <span className="gradient-text">Improve workforce health.</span>
+            Turn employee health into{" "}
+            <span className="gradient-text">a business advantage</span>
           </h2>
           <p className="text-[17px] text-text-secondary leading-relaxed">
-            Obesity-related conditions cost employers over $150B annually.
-            JoeyMed for Business provides a structured, clinically supported
-            program that delivers measurable ROI.
+            Obesity, hormonal imbalances, and untreated health conditions cost
+            your organization in premiums, productivity, and turnover. JoeyMed
+            gives you the infrastructure to change that.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
           {benefits.map((b) => (
             <div key={b.title} className="card-premium p-7">
               <div className="w-11 h-11 rounded-xl bg-blue/6 flex items-center justify-center mb-5">
@@ -65,6 +83,24 @@ export function ForEmployers() {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Bottom selling points */}
+        <div className="bg-white rounded-3xl p-8 sm:p-10 border border-border">
+          <h3 className="text-lg font-bold mb-6">Why employers are making this investment now</h3>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {sellingPoints.map((sp) => (
+              <div key={sp.metric}>
+                <div className="flex items-center gap-2 mb-2">
+                  <ArrowRight size={14} className="text-blue" strokeWidth={2} />
+                  <h4 className="text-[14px] font-bold">{sp.metric}</h4>
+                </div>
+                <p className="text-[13px] text-text-secondary leading-relaxed">
+                  {sp.detail}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
