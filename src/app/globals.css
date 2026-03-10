@@ -175,6 +175,21 @@ details[open] summary .faq-icon {
   transform: rotate(45deg);
 }
 
+/* Popup entrance animation */
+@keyframes animate-in {
+  from { opacity: 0; transform: scale(0.95) translateY(8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.animate-in {
+  animation: animate-in 0.25s ease-out;
+}
+
+/* Safe area for mobile sticky bar */
+.safe-bottom {
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+}
+
 /* Selection color */
 ::selection {
   background: rgba(59,130,246,0.15);

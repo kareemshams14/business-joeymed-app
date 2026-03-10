@@ -13,6 +13,8 @@ import { Plans } from "@/components/Plans";
 import { FAQ } from "@/components/FAQ";
 import { ContactCTA } from "@/components/ContactCTA";
 import { Footer } from "@/components/Footer";
+import { MobileStickyBar } from "@/components/MobileStickyBar";
+import { ExitIntentPopup } from "@/components/ExitIntentPopup";
 
 export default function Home() {
   return (
@@ -40,6 +42,8 @@ export default function Home() {
       <FAQ />
       <ContactCTA />
       <Footer />
+      <MobileStickyBar />
+      <ExitIntentPopup />
     </>
   );
 }

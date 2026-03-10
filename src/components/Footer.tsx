@@ -9,6 +9,7 @@ const footerCols = [
       { label: "Results", href: "#results" },
       { label: "Plans", href: "#plans" },
       { label: "Savings Calculator", href: "/savings-calculator" },
+      { label: "Compare", href: "/compare" },
     ],
   },
   {
@@ -25,6 +26,7 @@ const footerCols = [
     links: [
       { label: "About JoeyMed", href: "https://joeymed.com/about-us", external: true },
       { label: "Contact", href: "#contact" },
+      { label: "Compliance & Security", href: "/compliance" },
     ],
   },
   {
