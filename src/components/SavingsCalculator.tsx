@@ -350,12 +350,27 @@ export function SavingsCalculator() {
           {/* Methodology note */}
           <div className="flex items-start gap-3 px-5 py-4 bg-blue/4 rounded-2xl border border-blue/10">
             <Info size={16} className="text-blue mt-0.5 shrink-0" />
-            <p className="text-[11px] text-text-secondary leading-relaxed">
-              Estimates based on published research from KFF, Milliman, Mayo Clinic &
-              RAND Corp. Actual savings depend on population health profile, plan
-              design, and program utilization. We&apos;ll provide a custom analysis
-              during your consultation.
-            </p>
+            <div className="text-[11px] text-text-secondary leading-relaxed">
+              <p className="mb-1.5">
+                Estimates based on published research from KFF, Milliman, Mayo
+                Clinic, RAND Corp &{" "}
+                <a
+                  href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12403326/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue underline underline-offset-2"
+                >
+                  Pearson et al. (2025)
+                </a>
+                . Managed carve-out programs report 3:1 ROI and 10–12% average
+                weight loss.
+              </p>
+              <p>
+                Actual savings depend on population health profile, plan design,
+                and program utilization. We&apos;ll provide a custom analysis
+                during your consultation.
+              </p>
+            </div>
           </div>
         </div>
       </div>

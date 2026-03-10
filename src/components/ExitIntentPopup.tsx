@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, FormEvent } from "react";
-import { X, FileDown, Loader2, Check } from "lucide-react";
+import { X, FileText, Loader2, Check, ExternalLink } from "lucide-react";
 
 const GHL_WEBHOOK_URL =
   "https://services.leadconnectorhq.com/hooks/PZ1DjXbsgVV0YgQITQYA/webhook-trigger/d4f7cc57-a0d6-4d9b-aab8-77102ba389bc";
@@ -56,8 +56,9 @@ export function ExitIntentPopup() {
     const payload = {
       first_name: formData.get("first_name"),
       email: formData.get("email"),
-      programs: "Guide Download - Exit Intent",
-      message: "Downloaded 2026 Employer Guide to GLP-1 Programs",
+      programs: "Research Report Download - Exit Intent",
+      message:
+        "Downloaded GLP-1 Employer Research Report 2025 (based on Pearson et al., PMC12403326)",
     };
 
     try {
@@ -106,55 +107,82 @@ export function ExitIntentPopup() {
             <div className="w-14 h-14 rounded-full bg-teal/10 flex items-center justify-center mx-auto mb-4">
               <Check size={28} className="text-teal" strokeWidth={2} />
             </div>
-            <h3 className="text-xl font-bold mb-2">Check your inbox!</h3>
+            <h3 className="text-xl font-bold mb-2">Your report is ready</h3>
             <p className="text-[14px] text-text-secondary leading-relaxed mb-5">
-              We&apos;ll send the guide to your email shortly. In the
-              meantime, feel free to explore.
+              Access the full research report with peer-reviewed data from the
+              Journal of Comparative Effectiveness Research.
             </p>
+            <a
+              href="/research-report"
+              className="btn-primary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-[13px] mb-3"
+            >
+              <FileText size={15} />
+              View Research Report
+            </a>
             <button
               onClick={dismiss}
-              className="btn-secondary px-6 py-2.5 rounded-xl font-semibold text-[13px]"
+              className="block mx-auto text-[13px] text-text-muted hover:text-text-secondary transition-colors mt-2"
             >
-              Continue Browsing
+              Continue browsing
             </button>
           </div>
         ) : (
           <>
-            <div className="w-12 h-12 rounded-2xl bg-blue/8 flex items-center justify-center mb-5">
-              <FileDown size={24} className="text-blue" strokeWidth={1.5} />
+            <div className="w-12 h-12 rounded-2xl bg-rose/8 flex items-center justify-center mb-5">
+              <FileText size={24} className="text-rose" strokeWidth={1.5} />
             </div>
 
             <h3 className="text-xl sm:text-2xl font-bold tracking-tight mb-2">
               Before you go...
             </h3>
             <p className="text-[14px] text-text-secondary leading-relaxed mb-6">
-              Download our free{" "}
+              Get our free{" "}
               <strong className="text-text-primary">
-                2026 Employer&apos;s Guide to GLP-1 Programs
+                GLP-1 Employer Research Report
               </strong>{" "}
-              — everything you need to make the case internally.
+              — peer-reviewed data on why unmanaged GLP-1 coverage is bankrupting
+              health plans, and what to do instead.
             </p>
 
             <div className="bg-bg rounded-2xl p-4 mb-6 border border-border/60">
               <div className="text-[12px] font-semibold text-text-muted uppercase tracking-wider mb-2">
-                What&apos;s inside
+                Key findings inside
               </div>
               <ul className="space-y-1.5">
                 {[
-                  "ROI benchmarks from real employer programs",
-                  "Clinical evidence for GLP-1, TRT & HRT",
-                  "Implementation checklist & timeline",
-                  "Sample employee communication templates",
+                  "BCBS MA's $400M loss — GLP-1s drove $300M",
+                  "Colorado's costs quadrupled in one year",
+                  "How managed programs deliver 3:1 ROI",
+                  "50% of patients managed without GLP-1s",
+                  "10–12% weight loss from carve-out programs",
                 ].map((item) => (
                   <li
                     key={item}
                     className="flex items-center gap-2 text-[13px] text-text-secondary"
                   >
-                    <Check size={12} className="text-teal shrink-0" strokeWidth={2.5} />
+                    <Check
+                      size={12}
+                      className="text-teal shrink-0"
+                      strokeWidth={2.5}
+                    />
                     {item}
                   </li>
                 ))}
               </ul>
+            </div>
+
+            <div className="flex items-center gap-1.5 mb-5 text-[11px] text-text-muted">
+              <ExternalLink size={10} />
+              Based on{" "}
+              <a
+                href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12403326/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue underline underline-offset-2"
+              >
+                Pearson et al. (2025)
+              </a>{" "}
+              — PMC / NIH
             </div>
 
             <form onSubmit={handleSubmit}>
@@ -186,8 +214,8 @@ export function ExitIntentPopup() {
                   </>
                 ) : (
                   <>
-                    <FileDown size={16} />
-                    Download Free Guide
+                    <FileText size={16} />
+                    Get the Free Report
                   </>
                 )}
               </button>

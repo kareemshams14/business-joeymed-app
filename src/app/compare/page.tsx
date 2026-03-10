@@ -14,6 +14,8 @@ import {
   Smartphone,
   ShieldCheck,
   DollarSign,
+  AlertTriangle,
+  ExternalLink,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -258,6 +260,98 @@ export default function ComparePage() {
             clinical programs like GLP-1, HRT, and longevity medicine. See how
             JoeyMed stacks up.
           </p>
+        </div>
+      </section>
+
+      {/* Cost Crisis Section */}
+      <section className="py-16 sm:py-20 bg-white border-b border-border">
+        <div className="max-w-[900px] mx-auto px-6">
+          <div className="text-center max-w-[640px] mx-auto mb-12">
+            <span className="inline-block px-3 py-1 bg-rose/6 text-rose rounded-md text-[11px] font-semibold uppercase tracking-[0.15em] mb-4">
+              The Cost Crisis
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold leading-tight tracking-tight mb-3">
+              What happens <span className="gradient-text">without</span> a managed program
+            </h2>
+            <p className="text-[15px] text-text-secondary leading-relaxed">
+              Employers adding GLP-1 coverage without a clinical management
+              strategy are seeing costs spiral out of control.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-5 mb-8">
+            {[
+              {
+                org: "Blue Cross Blue Shield MA",
+                stat: "$400M operating loss",
+                detail:
+                  "Worst financial year on record. GLP-1 drugs drove $300M in costs — 20% of total pharmacy spend, double the prior year.",
+                color: "text-rose",
+                bgColor: "bg-rose/10",
+              },
+              {
+                org: "Colorado State Workers",
+                stat: "Costs quadrupled",
+                detail:
+                  "GLP-1 spending quadrupled from 2023 to 2024, with costs doubling every 6 months. Budget projections became impossible.",
+                color: "text-amber",
+                bgColor: "bg-amber/10",
+              },
+              {
+                org: "North Carolina State Plan",
+                stat: "2x premium increase needed",
+                detail:
+                  "Would require doubling insurance premiums to sustain GLP-1 coverage. Plan is now reconsidering its coverage policy.",
+                color: "text-purple",
+                bgColor: "bg-purple/10",
+              },
+              {
+                org: "Prime Therapeutics (PBM)",
+                stat: "+$7,000 per member",
+                detail:
+                  "Average healthcare costs rose $7,000 in the first year after GLP-1 initiation. No medical cost offsets were observed.",
+                color: "text-blue",
+                bgColor: "bg-blue/10",
+              },
+            ].map((item) => (
+              <div
+                key={item.org}
+                className="bg-bg rounded-2xl p-6 border border-border"
+              >
+                <div className="flex items-center gap-2 mb-3">
+                  <AlertTriangle size={14} className={item.color} />
+                  <span className="text-[11px] font-semibold text-text-muted uppercase tracking-wider">
+                    {item.org}
+                  </span>
+                </div>
+                <div className={`text-xl font-bold ${item.color} mb-2`}>
+                  {item.stat}
+                </div>
+                <p className="text-[13px] text-text-secondary leading-relaxed">
+                  {item.detail}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-teal/4 border border-teal/10 rounded-2xl p-6 text-center">
+            <p className="text-[14px] text-text-secondary leading-relaxed mb-1">
+              <strong className="text-text-primary">
+                The alternative: managed carve-out programs
+              </strong>{" "}
+              like JoeyMed deliver 10–12% weight loss, manage 50% of patients
+              without GLP-1s, and report 3:1 ROI.
+            </p>
+            <a
+              href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12403326/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-teal mt-2 hover:underline"
+            >
+              Read the full research (PMC / NIH)
+              <ExternalLink size={11} />
+            </a>
+          </div>
         </div>
       </section>
 

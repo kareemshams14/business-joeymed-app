@@ -5,51 +5,57 @@ import {
 const impacts = [
   {
     icon: TrendingDown,
-    stat: "Up to 30%",
-    title: "Lower Health Insurance Premiums",
-    desc: "A healthier workforce means fewer chronic disease claims. Employers who invest in preventive health programs see measurable reductions in group insurance premiums and out-of-pocket costs.",
+    stat: "$400M",
+    title: "BCBS MA Lost to GLP-1 Costs",
+    desc: "Blue Cross Blue Shield Massachusetts posted a $400M operating loss in 2024 — GLP-1 drugs alone drove $300M of that, representing 20% of total pharmacy costs. Managed programs like ours prevent this.",
     color: "text-teal",
     bgColor: "bg-teal/10",
+    source: "Pearson et al., J Comp Eff Res, 2025",
   },
   {
     icon: Zap,
-    stat: "2–3x",
-    title: "More Productive Employees",
-    desc: "Employees managing weight, hormones, and wellness perform at a higher level. Reduced brain fog, improved energy, and better sleep translate directly into stronger output and engagement.",
+    stat: "67%",
+    title: "Of Large Employers Cover GLP-1s",
+    desc: "Two-thirds of large employers (17.1M employees) now cover GLP-1 medications, with another 19% considering it. If you don\u2019t offer it, your competitors do.",
     color: "text-blue-glow",
     bgColor: "bg-blue/10",
+    source: "Pearson et al., J Comp Eff Res, 2025",
   },
   {
     icon: Heart,
-    stat: "47%",
-    title: "Fewer Sick Days & Absenteeism",
-    desc: "Chronic conditions like obesity and hormonal imbalances drive absenteeism. Clinically supervised programs reduce sick days and presenteeism significantly.",
+    stat: "10–12%",
+    title: "Average Weight Loss Achieved",
+    desc: "Connecticut\u2019s state employee carve-out program achieved 10% average weight loss — 12% for GLP-1 users — with 50% of patients managed on lower-cost alternatives.",
     color: "text-rose",
     bgColor: "bg-rose/10",
+    source: "Flyte Health / CT State, 2025",
   },
   {
     icon: Users,
-    stat: "68%",
-    title: "Stronger Talent Retention",
-    desc: "Health benefits are a top factor in employee retention. Offering GLP-1, HRT, and wellness programs signals genuine investment in your people — making them less likely to leave.",
+    stat: "3:1",
+    title: "Return on Investment",
+    desc: "Employer carve-out programs report a 3-to-1 ROI on clinical health investments. Managed programs reduce claims, absenteeism, and presenteeism simultaneously.",
     color: "text-purple",
     bgColor: "bg-purple/10",
+    source: "Pearson et al., J Comp Eff Res, 2025",
   },
   {
     icon: Smile,
-    stat: "5x",
-    title: "Positive Workplace Culture",
-    desc: "Energetic, healthy employees create a ripple effect. Improved mood, confidence, and physical well-being foster collaboration, creativity, and a more positive daily work environment.",
+    stat: "50%",
+    title: "Managed Without GLP-1s",
+    desc: "Clinical programs with step therapy manage half of patients on lower-cost medications — phentermine/topiramate at $1,465/yr vs. $9,000+ for GLP-1s — delivering results at a fraction of the cost.",
     color: "text-amber",
     bgColor: "bg-amber/10",
+    source: "Pearson et al., J Comp Eff Res, 2025",
   },
   {
     icon: Shield,
-    stat: "$150B+",
-    title: "Obesity-Related Costs Avoided",
-    desc: "U.S. employers spend over $150B annually on obesity-related healthcare. Proactive intervention through structured programs turns a cost center into a competitive advantage.",
+    stat: "$100B+",
+    title: "Projected Annual GLP-1 Spend",
+    desc: "U.S. GLP-1 spending could exceed $100 billion annually within 5 years. Without managed programs, employer costs quadruple — Colorado\u2019s state plan saw exactly that from 2023 to 2024.",
     color: "text-cyan",
     bgColor: "bg-cyan/10",
+    source: "Pearson et al., J Comp Eff Res, 2025",
   },
 ];
 
@@ -91,6 +97,11 @@ export function WhyInvest() {
               <p className="text-[13px] text-white/40 leading-relaxed">
                 {item.desc}
               </p>
+              {"source" in item && (
+                <p className="text-[10px] text-white/20 mt-3 italic">
+                  Source: {item.source}
+                </p>
+              )}
             </div>
           ))}
         </div>
