@@ -10,6 +10,7 @@ const navLinks = [
   { href: "#how-it-works", label: "How It Works" },
   { href: "#employers", label: "For Employers" },
   { href: "#plans", label: "Plans" },
+  { href: "/savings-calculator", label: "Savings Calculator" },
   { href: "#faq", label: "FAQ" },
 ];
 

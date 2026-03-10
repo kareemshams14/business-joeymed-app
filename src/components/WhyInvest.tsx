@@ -103,7 +103,7 @@ export function WhyInvest() {
               invested in clinical health programs.
             </p>
             <a
-              href="#contact"
+              href="/savings-calculator"
               className="btn-primary shrink-0 inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold text-[13px]"
             >
               Calculate Your ROI

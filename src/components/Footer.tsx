@@ -8,6 +8,7 @@ const footerCols = [
       { label: "How It Works", href: "#how-it-works" },
       { label: "Results", href: "#results" },
       { label: "Plans", href: "#plans" },
+      { label: "Savings Calculator", href: "/savings-calculator" },
     ],
   },
   {
