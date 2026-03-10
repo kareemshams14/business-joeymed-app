@@ -23,7 +23,7 @@ const impacts = [
     icon: Heart,
     stat: "47%",
     title: "Fewer Sick Days & Absenteeism",
-    desc: "Chronic conditions like obesity, hormonal imbalances, and untreated sexual health issues drive absenteeism. Clinically supervised programs reduce sick days and presenteeism significantly.",
+    desc: "Chronic conditions like obesity and hormonal imbalances drive absenteeism. Clinically supervised programs reduce sick days and presenteeism significantly.",
     color: "text-rose",
     bgColor: "bg-rose/10",
   },

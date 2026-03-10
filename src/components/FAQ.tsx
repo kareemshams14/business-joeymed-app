@@ -5,11 +5,11 @@ import { useState } from "react";
 const faqs = [
   {
     q: "What programs do you offer?",
-    a: "We offer five program categories: (1) Individualized Weight Loss with compounded GLP-1/GIP, (2) Brand-Name Weight Loss with Wegovy/Ozempic/Zepbound/Mounjaro only, (3) Testosterone Replacement Therapy (TRT), (4) Female Hormone Replacement Therapy (HRT) for menopause/perimenopause, (5) Men's and Women's Sexual Health (ED, PE, libido), and (6) Anti-Aging & Longevity. All are clinically supervised and delivered via telemedicine.",
+    a: "We offer four program categories: (1) Individualized Weight Loss with compounded GLP-1/GIP, (2) Brand-Name Weight Loss with Wegovy/Ozempic/Zepbound/Mounjaro only, (3) Testosterone Replacement Therapy (TRT), (4) Female Hormone Replacement Therapy (HRT) for menopause/perimenopause, and (5) Anti-Aging & Longevity. All are clinically supervised and delivered via telemedicine.",
   },
   {
     q: "How does the at-home screening work?",
-    a: "For programs requiring labs (TRT, Female HRT), we ship screening kits directly to enrolled employees. They complete at-home blood collection guided by a live certified proctor via telehealth. Results are clinically reviewed, and eligible employees receive their prescription. Weight loss, sexual health, and longevity programs typically don't require labs.",
+    a: "For programs requiring labs (TRT, Female HRT), we ship screening kits directly to enrolled employees. They complete at-home blood collection guided by a live certified proctor via telehealth. Results are clinically reviewed, and eligible employees receive their prescription. Weight loss and longevity programs typically don't require labs.",
   },
   {
     q: "What's the difference between Individualized and Brand-Name Weight Loss?",
@@ -18,10 +18,6 @@ const faqs = [
   {
     q: "What medications are prescribed for TRT and Female HRT?",
     a: "TRT: Testosterone Lotion (2-20mg/ml), Testosterone Lotion 5-10%, and Testosterone Cypionate injections — all requiring mandatory low-T lab confirmation. Female HRT: Estrogen therapy (Estrogel, Divigel, Vivelle-Dot patches, oral Estrace, Evamist spray), Progesterone (Prometrium, Provera, Norethindrone), and Vaginal Estrogen for genitourinary symptoms. Female HRT does not include controlled substances like testosterone.",
-  },
-  {
-    q: "What sexual health treatments are available?",
-    a: "Men's ED: Sildenafil, Tadalafil, Vardenafil, Avanafil, and compounded combinations. Premature Ejaculation: SSRI class (Paroxetine, Sertraline, Fluoxetine, Citalopram) and PDE5i class, plus desensitizing products. Women's Sexual Health: PT-141 (Bremelanotide) and Oxytocin for desire and intimacy support. No labs required for any sexual health program.",
   },
   {
     q: "How does pricing work for employers?",
@@ -33,7 +29,7 @@ const faqs = [
   },
   {
     q: "How is patient privacy handled?",
-    a: "All services are fully HIPAA-compliant. Employers receive only aggregated, de-identified data — never individual employee health information. Our platform uses enterprise-grade encryption and follows strict healthcare data governance protocols. Sexual health programs feature additional privacy safeguards.",
+    a: "All services are fully HIPAA-compliant. Employers receive only aggregated, de-identified data — never individual employee health information. Our platform uses enterprise-grade encryption and follows strict healthcare data governance protocols.",
   },
 ];
 

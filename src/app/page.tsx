@@ -19,7 +19,7 @@ export default function Home() {
     <>
       <div className="bg-navy text-white/80 text-center py-2.5 px-4 text-[13px] font-medium tracking-wide">
         <p>
-          Now offering employer-sponsored weight loss, hormone, sexual health & longevity programs —{" "}
+          Now offering employer-sponsored weight loss, hormone & longevity programs —{" "}
           <a href="#contact" className="text-blue-glow underline underline-offset-2 font-semibold hover:text-white transition-colors">
             Talk to our team &rarr;
           </a>

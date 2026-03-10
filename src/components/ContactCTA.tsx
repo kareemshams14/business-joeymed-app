@@ -126,7 +126,7 @@ export function ContactCTA() {
                   Which programs are you interested in?
                 </label>
                 <div className="flex flex-wrap gap-2">
-                  {["Weight Loss", "TRT / Female HRT", "Sexual Health", "Anti-Aging & Longevity", "All Programs"].map(
+                  {["Weight Loss", "TRT / Female HRT", "Anti-Aging & Longevity", "All Programs"].map(
                     (prog) => (
                       <label
                         key={prog}

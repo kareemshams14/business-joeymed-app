@@ -10,7 +10,7 @@ const steps = [
   {
     num: "02",
     title: "At-Home Screening Kit",
-    desc: "For programs requiring labs, screening kits ship directly to employees. Weight loss and sexual health programs use streamlined digital intake.",
+    desc: "For programs requiring labs, screening kits ship directly to employees. Weight loss and longevity programs use streamlined digital intake.",
     icon: Package,
   },
   {
@@ -40,7 +40,7 @@ export function HowItWorks() {
             <span className="gradient-text">four simple steps</span>
           </h2>
           <p className="text-[17px] text-text-secondary leading-relaxed">
-            Whether it&apos;s weight loss, hormone therapy, sexual health, or
+            Whether it&apos;s weight loss, hormone therapy, or
             longevity — our platform guides employees from intake through
             ongoing care.
           </p>

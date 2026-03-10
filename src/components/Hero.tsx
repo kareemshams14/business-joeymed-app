@@ -20,7 +20,7 @@ export function Hero() {
             <span className="gradient-text-light">employee health</span> starts here
           </h1>
           <p className="text-lg text-white/50 leading-relaxed mb-10 max-w-[520px]">
-            Weight loss, hormone therapy, sexual health, and longevity programs —
+            Weight loss, hormone therapy, and longevity programs —
             clinically supervised and delivered to your workforce. At-home testing,
             telehealth support, and measurable outcomes.
           </p>
