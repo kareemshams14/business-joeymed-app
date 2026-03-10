@@ -45,7 +45,7 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
             <a href="#top" className="flex items-center gap-3 mb-4">
-              <Image src="/logo.svg" alt="JoeyMed" width={90} height={45} className="h-8 w-auto brightness-0 invert opacity-80" />
+              <Image src="/logo.png" alt="JoeyMed" width={150} height={75} className="h-8 w-auto brightness-0 invert opacity-80" />
               <span className="text-[9px] font-semibold text-white/25 uppercase tracking-[0.15em] border-l border-white/10 pl-3">
                 for Business
               </span>

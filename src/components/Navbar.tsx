@@ -21,7 +21,7 @@ export function Navbar() {
       <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-[68px]">
         {/* Logo */}
         <a href="#top" className="flex items-center gap-3">
-          <Image src="/logo.svg" alt="JoeyMed" width={100} height={50} className="h-9 w-auto" priority />
+          <Image src="/logo.png" alt="JoeyMed" width={150} height={75} className="h-9 w-auto" priority />
           <span className="text-[10px] font-semibold text-text-muted uppercase tracking-[0.15em] border-l border-border pl-3">
             for Business
           </span>
