@@ -1,7 +1,10 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { Check } from "lucide-react";
+import { Check, Loader2 } from "lucide-react";
+
+const GHL_WEBHOOK_URL =
+  "https://services.leadconnectorhq.com/hooks/PZ1DjXbsgVV0YgQITQYA/webhook-trigger/d4f7cc57-a0d6-4d9b-aab8-77102ba389bc";
 
 const highlights = [
   "No setup fees",
@@ -11,10 +14,42 @@ const highlights = [
 
 export function ContactCTA() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(false);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    setError(false);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const selectedPrograms = formData.getAll("programs").join(", ");
+
+    const payload = {
+      first_name: formData.get("first_name"),
+      last_name: formData.get("last_name"),
+      email: formData.get("email"),
+      company_name: formData.get("company_name"),
+      employee_count: formData.get("employee_count"),
+      programs: selectedPrograms,
+      message: formData.get("message"),
+    };
+
+    try {
+      await fetch(GHL_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+        mode: "no-cors",
+      });
+      setSubmitted(true);
+    } catch {
+      setError(true);
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -66,6 +101,7 @@ export function ContactCTA() {
                   </label>
                   <input
                     type="text"
+                    name="first_name"
                     required
                     className="w-full px-4 py-3 border border-border rounded-xl bg-bg text-[14px] outline-none focus:border-blue focus:ring-2 focus:ring-blue/10 transition"
                   />
@@ -76,6 +112,7 @@ export function ContactCTA() {
                   </label>
                   <input
                     type="text"
+                    name="last_name"
                     required
                     className="w-full px-4 py-3 border border-border rounded-xl bg-bg text-[14px] outline-none focus:border-blue focus:ring-2 focus:ring-blue/10 transition"
                   />
@@ -88,6 +125,7 @@ export function ContactCTA() {
                 </label>
                 <input
                   type="email"
+                  name="email"
                   required
                   className="w-full px-4 py-3 border border-border rounded-xl bg-bg text-[14px] outline-none focus:border-blue focus:ring-2 focus:ring-blue/10 transition"
                 />
@@ -99,6 +137,7 @@ export function ContactCTA() {
                 </label>
                 <input
                   type="text"
+                  name="company_name"
                   required
                   className="w-full px-4 py-3 border border-border rounded-xl bg-bg text-[14px] outline-none focus:border-blue focus:ring-2 focus:ring-blue/10 transition"
                 />
@@ -109,6 +148,7 @@ export function ContactCTA() {
                   Number of employees
                 </label>
                 <select
+                  name="employee_count"
                   required
                   className="w-full px-4 py-3 border border-border rounded-xl bg-bg text-[14px] outline-none focus:border-blue focus:ring-2 focus:ring-blue/10 transition"
                 >
@@ -132,7 +172,7 @@ export function ContactCTA() {
                         key={prog}
                         className="inline-flex items-center gap-2 px-3.5 py-2 border border-border rounded-lg text-[13px] cursor-pointer hover:border-blue/40 hover:bg-blue/4 transition has-[:checked]:border-blue/40 has-[:checked]:bg-blue/6"
                       >
-                        <input type="checkbox" value={prog} className="sr-only" />
+                        <input type="checkbox" name="programs" value={prog} className="sr-only" />
                         {prog}
                       </label>
                     )
@@ -145,6 +185,7 @@ export function ContactCTA() {
                   How can we help?
                 </label>
                 <textarea
+                  name="message"
                   rows={3}
                   className="w-full px-4 py-3 border border-border rounded-xl bg-bg text-[14px] outline-none focus:border-blue focus:ring-2 focus:ring-blue/10 transition resize-y min-h-[80px]"
                 />
@@ -152,10 +193,18 @@ export function ContactCTA() {
 
               <button
                 type="submit"
-                className="btn-primary w-full block text-center px-7 py-3.5 rounded-xl font-semibold text-[14px]"
+                disabled={submitting}
+                className="btn-primary w-full flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-[14px] disabled:opacity-60"
               >
-                Request a Demo
+                {submitting && <Loader2 size={16} className="animate-spin" />}
+                {submitting ? "Sending..." : "Request a Demo"}
               </button>
+
+              {error && (
+                <p className="mt-3 text-[13px] text-rose text-center">
+                  Something went wrong. Please try again or email us directly.
+                </p>
+              )}
 
               <p className="mt-3 text-[11px] text-text-muted text-center">
                 By submitting, you agree to our{" "}
