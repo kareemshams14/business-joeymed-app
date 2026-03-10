@@ -26,14 +26,14 @@ export function Hero() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 mb-12">
             <a
-              href="#contact"
+              href="/#contact"
               className="btn-primary inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-[15px]"
             >
               Request a Demo
               <ArrowRight size={16} className="ml-2" />
             </a>
             <a
-              href="#how-it-works"
+              href="/#how-it-works"
               className="btn-outline-light inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-[15px]"
             >
               See How It Works

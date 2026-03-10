@@ -28,7 +28,7 @@ export function MobileStickyBar() {
           Savings Calculator
         </a>
         <a
-          href="#contact"
+          href="/#contact"
           className="btn-primary flex-1 flex items-center justify-center px-4 py-3 rounded-xl font-semibold text-[13px]"
         >
           Request Demo

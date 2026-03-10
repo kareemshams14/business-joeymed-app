@@ -4,10 +4,10 @@ const footerCols = [
   {
     title: "Platform",
     links: [
-      { label: "Programs", href: "#programs" },
-      { label: "How It Works", href: "#how-it-works" },
-      { label: "Results", href: "#results" },
-      { label: "Plans", href: "#plans" },
+      { label: "Programs", href: "/#programs" },
+      { label: "How It Works", href: "/#how-it-works" },
+      { label: "Results", href: "/#results" },
+      { label: "Plans", href: "/#plans" },
       { label: "Savings Calculator", href: "/savings-calculator" },
       { label: "Compare", href: "/compare" },
       { label: "Research Report", href: "/research-report" },
@@ -16,17 +16,17 @@ const footerCols = [
   {
     title: "Programs",
     links: [
-      { label: "Weight Loss", href: "#clinical" },
-      { label: "Behavioral Health", href: "#clinical" },
-      { label: "Hormone Therapy", href: "#clinical" },
-      { label: "Longevity & Wellness", href: "#clinical" },
+      { label: "Weight Loss", href: "/#clinical" },
+      { label: "Behavioral Health", href: "/#clinical" },
+      { label: "Hormone Therapy", href: "/#clinical" },
+      { label: "Longevity & Wellness", href: "/#clinical" },
     ],
   },
   {
     title: "Company",
     links: [
       { label: "About JoeyMed", href: "https://joeymed.com/about-us", external: true },
-      { label: "Contact", href: "#contact" },
+      { label: "Contact", href: "/#contact" },
       { label: "Compliance & Security", href: "/compliance" },
     ],
   },
@@ -48,7 +48,7 @@ export function Footer() {
         <div className="grid grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-10 mb-14">
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
-            <a href="#top" className="flex items-center gap-3 mb-4">
+            <a href="/" className="flex items-center gap-3 mb-4">
               <Image src="/logo.png" alt="JoeyMed" width={150} height={75} className="h-8 w-auto brightness-0 invert opacity-80" />
               <span className="text-[9px] font-semibold text-white/25 uppercase tracking-[0.15em] border-l border-white/10 pl-3">
                 for Business
@@ -86,7 +86,19 @@ export function Footer() {
             &copy; 2026 JoeyMed, Inc. All rights reserved. Licensed U.S.
             providers. HIPAA-compliant.
           </p>
-          <div className="flex gap-2">
+          <div className="flex items-center gap-2">
+            <a
+              href="https://www.legitscript.com/websites/joeymed.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-2.5 py-1 rounded-md text-[10px] font-bold bg-white/[0.04] text-white/25 uppercase tracking-wide border border-white/[0.04] hover:text-white/40 hover:border-white/10 transition-colors flex items-center gap-1.5"
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="opacity-60">
+                <path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
+                <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              LegitScript
+            </a>
             {["HIPAA", "SOC 2", "50 States"].map((b) => (
               <span
                 key={b}

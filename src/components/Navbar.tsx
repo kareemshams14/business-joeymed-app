@@ -5,13 +5,13 @@ import { Menu, X } from "lucide-react";
 import Image from "next/image";
 
 const navLinks = [
-  { href: "#programs", label: "Programs" },
-  { href: "#clinical", label: "What We Cover" },
-  { href: "#how-it-works", label: "How It Works" },
-  { href: "#employers", label: "For Employers" },
-  { href: "#plans", label: "Plans" },
+  { href: "/#programs", label: "Programs" },
+  { href: "/#clinical", label: "What We Cover" },
+  { href: "/#how-it-works", label: "How It Works" },
+  { href: "/#employers", label: "For Employers" },
+  { href: "/#plans", label: "Plans" },
   { href: "/savings-calculator", label: "Savings Calculator" },
-  { href: "#faq", label: "FAQ" },
+  { href: "/#faq", label: "FAQ" },
 ];
 
 export function Navbar() {
@@ -21,7 +21,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-2xl border-b border-border/60">
       <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-[68px]">
         {/* Logo */}
-        <a href="#top" className="flex items-center gap-3">
+        <a href="/" className="flex items-center gap-3">
           <Image src="/logo.png" alt="JoeyMed" width={150} height={75} className="h-9 w-auto" priority />
           <span className="text-[10px] font-semibold text-text-muted uppercase tracking-[0.15em] border-l border-border pl-3">
             for Business
@@ -44,7 +44,7 @@ export function Navbar() {
         {/* CTA + Mobile Toggle */}
         <div className="flex items-center gap-3">
           <a
-            href="#contact"
+            href="/#contact"
             className="hidden sm:inline-flex btn-primary items-center justify-center px-5 py-2.5 rounded-lg font-semibold text-[13px]"
           >
             Request Demo
@@ -73,7 +73,7 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="/#contact"
             onClick={() => setOpen(false)}
             className="btn-primary mt-6 block text-center px-7 py-3.5 rounded-xl font-semibold text-[15px]"
           >
