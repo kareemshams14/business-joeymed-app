@@ -38,10 +38,15 @@ export function ContactCTA() {
     };
 
     try {
+      const params = new URLSearchParams();
+      for (const [key, value] of Object.entries(payload)) {
+        if (value != null) params.append(key, String(value));
+      }
+
       await fetch(GHL_WEBHOOK_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: params.toString(),
         mode: "no-cors",
       });
       setSubmitted(true);

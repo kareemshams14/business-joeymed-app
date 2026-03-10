@@ -5,6 +5,20 @@ export const metadata: Metadata = {
   title: "JoeyMed for Business — Employer-Sponsored Health & GLP-1 Programs",
   description:
     "JoeyMed for Business delivers clinically supervised GLP-1 weight management, TRT, and HRT programs for employers. At-home testing, telehealth support, and measurable outcomes.",
+  openGraph: {
+    title: "JoeyMed for Business",
+    description:
+      "Clinically supervised GLP-1, TRT & HRT programs for your workforce. At-home testing, telehealth, and measurable outcomes.",
+    url: "https://business.joeymed.com",
+    siteName: "JoeyMed for Business",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "JoeyMed for Business",
+    description:
+      "Clinically supervised GLP-1, TRT & HRT programs for your workforce.",
+  },
 };
 
 export default function RootLayout({
